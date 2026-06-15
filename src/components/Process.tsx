@@ -20,14 +20,16 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="iva-section iva-section--white" id="process">
+    <section className="iva-section iva-section--paper" id="process">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">Our Process</Eyebrow>
-          <h2>How Instant VA works</h2>
+          <Eyebrow align="center">03 — Process</Eyebrow>
+          <h2 className="iva-serif">
+            From hello to handled, in <em>days</em>.
+          </h2>
           <p className="iva-lead">
-            From first hello to first task done — getting matched with the
-            right assistant takes days, not weeks.
+            Getting matched with the right assistant takes days, not weeks —
+            here is how the whole thing works.
           </p>
         </div>
 

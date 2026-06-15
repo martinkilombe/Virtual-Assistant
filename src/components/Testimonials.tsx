@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Eyebrow from '@/components/ui/Eyebrow'
 import IconButton from '@/components/ui/IconButton'
-import { IconQuote, IconArrow, IconArrowL } from '@/components/icons'
+import { IconArrow, IconArrowL } from '@/components/icons'
 
 const QUOTES = [
   {
@@ -42,60 +42,40 @@ export default function Testimonials() {
   const q = QUOTES[i]
 
   return (
-    <section className="iva-section iva-section--white iva-tst" id="testimonials">
+    <section className="iva-section iva-section--paper iva-tst" id="testimonials">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">Testimonials</Eyebrow>
-          <h2>What our clients are saying</h2>
+          <Eyebrow align="center">05 — Testimonials</Eyebrow>
         </div>
 
         <div className="iva-tst__stage">
-          {/* Left cluster — image placeholders, drop real portraits in here later */}
-          <div className="iva-tst__cluster iva-tst__cluster--l" aria-hidden="true">
-            <span className="c1" />
-            <span className="c2" />
-            <span className="c3" />
+          <span className="iva-tst__glyph" aria-hidden="true">&ldquo;</span>
+          <p className="iva-tst__quote" key={i}>
+            {q.text}
+          </p>
+          <div className="iva-tst__author">
+            <span className="iva-tst__name">{q.name}</span>
+            <span className="iva-tst__role">{q.role}</span>
           </div>
-
-          {/* Quote panel */}
-          <div className="iva-tst__panel">
-            <span className="iva-tst__mark">
-              <IconQuote size={26} />
-            </span>
-            <p className="iva-tst__quote" key={i}>
-              {q.text}
-            </p>
-            <div className="iva-tst__author">
-              <span className="iva-tst__name">{q.name}</span>
-              <span className="iva-tst__role">{q.role}</span>
+          <div className="iva-tst__nav">
+            <IconButton variant="dark" size="md" label="Previous" onClick={() => go(-1)}>
+              <IconArrowL size={20} />
+            </IconButton>
+            <div className="iva-tst__dots" role="tablist">
+              {QUOTES.map((_, k) => (
+                <button
+                  key={k}
+                  role="tab"
+                  aria-selected={k === i}
+                  aria-label={`Go to testimonial ${k + 1}`}
+                  className={`iva-tst__dot${k === i ? ' on' : ''}`}
+                  onClick={() => setI(k)}
+                />
+              ))}
             </div>
-            <div className="iva-tst__nav">
-              <IconButton variant="dark" size="md" label="Previous" onClick={() => go(-1)}>
-                <IconArrowL size={20} />
-              </IconButton>
-              <div className="iva-tst__dots" role="tablist">
-                {QUOTES.map((_, k) => (
-                  <button
-                    key={k}
-                    role="tab"
-                    aria-selected={k === i}
-                    aria-label={`Go to testimonial ${k + 1}`}
-                    className={`iva-tst__dot${k === i ? ' on' : ''}`}
-                    onClick={() => setI(k)}
-                  />
-                ))}
-              </div>
-              <IconButton variant="dark" size="md" label="Next" onClick={() => go(1)}>
-                <IconArrow size={20} />
-              </IconButton>
-            </div>
-          </div>
-
-          {/* Right cluster — image placeholders, drop real portraits in here later */}
-          <div className="iva-tst__cluster iva-tst__cluster--r" aria-hidden="true">
-            <span className="c1" />
-            <span className="c2" />
-            <span className="c3" />
+            <IconButton variant="dark" size="md" label="Next" onClick={() => go(1)}>
+              <IconArrow size={20} />
+            </IconButton>
           </div>
         </div>
       </div>

@@ -49,14 +49,16 @@ export default function ContactCTA() {
       <div className="iva-container iva-cta__grid">
         {/* Left panel */}
         <div className="iva-cta__panel">
-          <Eyebrow color="white">Ready To</Eyebrow>
-          <h2 className="iva-onaccent">Get started with us today.</h2>
+          <Eyebrow color="white">06 — Contact</Eyebrow>
+          <h2 className="iva-onaccent">
+            Let&apos;s take it <em>off</em> your plate.
+          </h2>
           <p>
-            Tell us what&apos;s on your plate. We&apos;ll match you with the
+            Tell us what&apos;s eating your week. We&apos;ll match you with the
             right assistant — usually within a day.
           </p>
           <Button href="#contact" variant="light" size="lg">
-            Book a Free Call
+            Book a free call
           </Button>
           <div className="iva-cta__call">
             <span className="iva-cta__callicon">
@@ -73,7 +75,7 @@ export default function ContactCTA() {
 
         {/* Form */}
         <form className="iva-cta__form" onSubmit={submit} noValidate>
-          <p className="iva-cta__formhead">Send us a message now</p>
+          <p className="iva-cta__formhead">Send us a message</p>
 
           {sent ? (
             <div className="iva-cta__thanks">

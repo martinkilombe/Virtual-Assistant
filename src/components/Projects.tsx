@@ -19,14 +19,16 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <section className="iva-section" id="work">
+    <section className="iva-section iva-section--panel" id="work">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">Case Studies</Eyebrow>
-          <h2>Our recent work</h2>
+          <Eyebrow align="center">04 — Case Studies</Eyebrow>
+          <h2 className="iva-serif">
+            Quiet work, <em>loud</em> results.
+          </h2>
           <p className="iva-lead">
-            A look at how dedicated assistants quietly move the needle for
-            the teams they support.
+            A look at how dedicated assistants move the needle for the teams
+            they support.
           </p>
         </div>
 

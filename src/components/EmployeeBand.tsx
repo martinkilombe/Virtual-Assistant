@@ -4,7 +4,7 @@ import StatCard from '@/components/ui/StatCard'
 
 const STATS = [
   { value: '850+', label: 'Businesses served' },
-  { value: '4.9/5', label: 'Average rating' },
+  { value: '4.9', label: 'Average rating' },
   { value: '24h',   label: 'Avg. match time' },
 ]
 
@@ -18,13 +18,13 @@ export default function EmployeeBand() {
         </div>
 
         <div className="iva-band__copy">
-          <Eyebrow color="white">Virtual Employee</Eyebrow>
+          <Eyebrow color="white">The People</Eyebrow>
           <h2 className="iva-onband">
-            Find the ultimate virtual assistant for your business.
+            A real professional, <em>not</em> a chatbot.
           </h2>
           <p className="iva-band__lead">
-            Every Instant VA is a real, full-time professional — not a chatbot
-            and not a gig worker. They become part of your team, learn how you
+            Every Instant VA is a vetted, full-time professional — never a bot,
+            never a gig worker. They become part of your team, learn how you
             work, and grow with you.
           </p>
           <div className="iva-band__stats">
@@ -33,7 +33,7 @@ export default function EmployeeBand() {
             ))}
           </div>
           <Button href="#contact" variant="light" size="lg">
-            Get Started
+            Meet your match
           </Button>
         </div>
       </div>

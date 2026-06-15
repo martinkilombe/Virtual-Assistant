@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Button from '@/components/ui/Button'
-import { IconSearch, IconMenu, IconX } from '@/components/icons'
+import { IconMenu, IconX } from '@/components/icons'
 import { smoothTo } from '@/utils/smoothTo'
 
 const NAV = [
@@ -58,7 +58,7 @@ export default function NavBar() {
           aria-label="Instant VA home"
         >
           <span className="iva-logo">
-            INSTANT<span className="t">V</span><span className="o">A</span>
+            Instant<span className="t">V</span><span className="o">A</span>
           </span>
         </a>
 
@@ -76,9 +76,6 @@ export default function NavBar() {
         </nav>
 
         <div className="iva-nav__actions">
-          <button className="iva-nav__icon" aria-label="Search">
-            <IconSearch size={20} />
-          </button>
           <Button
             href="#contact"
             variant="primary"
@@ -86,7 +83,7 @@ export default function NavBar() {
             className="iva-nav__cta"
             onClick={(e) => handleLink(e as React.MouseEvent<HTMLAnchorElement>, '#contact')}
           >
-            Get Started
+            Book a call
           </Button>
           <button
             className="iva-nav__burger"
@@ -115,7 +112,7 @@ export default function NavBar() {
           size="md"
           onClick={(e) => handleLink(e as React.MouseEvent<HTMLAnchorElement>, '#contact')}
         >
-          Get Started
+          Book a call
         </Button>
       </div>
     </header>

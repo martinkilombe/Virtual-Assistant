@@ -10,15 +10,21 @@ const FOOT = [
 export default function Footer() {
   return (
     <footer className="iva-footer">
+      <div className="iva-container">
+        <p className="iva-footer__word">
+          Instant<em>VA</em>
+        </p>
+      </div>
+
       <div className="iva-container iva-footer__grid">
         {/* Brand column */}
         <div className="iva-footer__brand">
           <span className="iva-logo iva-logo--light">
-            INSTANT<span className="t">V</span><span className="o">A</span>
+            Instant<span className="t">V</span><span className="o">A</span>
           </span>
           <p>
-            Helping businesses stay productive with smart, reliable virtual
-            assistant support — every day.
+            Helping ambitious teams stay productive with smart, reliable
+            virtual assistant support — every day.
           </p>
           <div className="iva-footer__social">
             <a href="#" aria-label="Facebook"><IconFacebook size={18} /></a>

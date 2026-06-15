@@ -1,83 +1,72 @@
-import type { ComponentType } from 'react'
 import Button from '@/components/ui/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import CheckItem from '@/components/ui/CheckItem'
-import { IconArrow, IconResearch, IconInvoice, IconCalendar, IconRocket } from '@/components/icons'
+import { IconArrow } from '@/components/icons'
 
-interface ServiceCardProps {
-  Icon: ComponentType<{ size?: number }>
+interface ServiceRow {
+  num: string
   title: string
   desc: string
 }
 
-function ServiceCard({ Icon, title, desc }: ServiceCardProps) {
-  return (
-    <article
-      className="svc2 svc2--soft"
-      style={{ '--acc': 'var(--primary)' } as React.CSSProperties}
-    >
-      <span className="svc2__icon svc2__icon--rounded">
-        <Icon size={34} />
-      </span>
-      <div className="svc2__body">
-        <h3 className="svc2__title">{title}</h3>
-        <p className="svc2__desc">{desc}</p>
-        <span className="svc2__more">
-          Learn more <IconArrow size={17} />
-        </span>
-      </div>
-    </article>
-  )
-}
-
-const SERVICES: ServiceCardProps[] = [
+const SERVICES: ServiceRow[] = [
   {
-    Icon: IconResearch,
+    num: '01',
     title: 'Research & Reports',
     desc: 'Market scans, data pulls, and tidy reports — delivered ready to act on.',
   },
   {
-    Icon: IconInvoice,
+    num: '02',
     title: 'Expensing & Invoicing',
     desc: 'Invoices sent, receipts filed, expenses reconciled down to the cent.',
   },
   {
-    Icon: IconCalendar,
+    num: '03',
     title: 'Scheduling & Planning',
     desc: 'A calendar that runs itself — meetings booked, conflicts resolved.',
   },
   {
-    Icon: IconRocket,
-    title: 'Marketing & Social Media',
+    num: '04',
+    title: 'Marketing & Social',
     desc: 'Posts scheduled, inbox triaged, and your audience kept warm daily.',
   },
 ]
 
 export default function Services() {
   return (
-    <section className="iva-section" id="services">
+    <section className="iva-section iva-section--panel" id="services">
       <div className="iva-container iva-svc">
         <div className="iva-svc__copy">
-          <Eyebrow>Our Services</Eyebrow>
-          <h2>Everything we handle so you don&apos;t have to.</h2>
+          <Eyebrow>02 — Services</Eyebrow>
+          <h2 className="iva-serif">
+            One assistant, an <em>entire</em> skill set.
+          </h2>
           <p className="iva-lead">
-            One dedicated assistant, an entire skill set. Delegate the
-            recurring work that eats your week and get hours back to spend on
-            growth.
+            Delegate the recurring work that eats your week and get the hours
+            back to spend on growth.
           </p>
           <ul className="iva-svc__list">
             <CheckItem>Dedicated assistant matched to your needs</CheckItem>
             <CheckItem>Flexible hours — scale up or down anytime</CheckItem>
-            <CheckItem>No long-term contracts or hidden fees</CheckItem>
+            <CheckItem>No long contracts or hidden fees</CheckItem>
           </ul>
           <Button href="#contact" variant="primary" size="md">
-            Get Started
+            Book a free call
           </Button>
         </div>
 
-        <div className="iva-svc__grid is-stagger">
+        <div className="iva-svc__rows">
           {SERVICES.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+            <a key={s.num} href="#contact" className="svc-row">
+              <span className="svc-row__num">{s.num}</span>
+              <span>
+                <span className="svc-row__title">{s.title}</span>
+                <p className="svc-row__desc">{s.desc}</p>
+              </span>
+              <span className="svc-row__arrow">
+                <IconArrow size={22} />
+              </span>
+            </a>
           ))}
         </div>
       </div>

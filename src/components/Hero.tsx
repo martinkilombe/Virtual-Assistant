@@ -1,56 +1,50 @@
 import Button from '@/components/ui/Button'
 
-const TRUST_LOGOS = ['Accenture', 'Deloitte', 'Notion', 'Stripe', 'HubSpot']
+const CLIENTS = ['Northwind', 'Loomly', 'Brightpath', 'Park & Co.', 'Cedar', 'Møller', 'Atlas']
 
 export default function Hero() {
   return (
     <section className="iva-hero" id="top">
-      <div className="iva-hero__grid">
-        {/* Copy side */}
-        <div className="iva-hero__copy">
-          <h1 className="iva-hero__title">
-            Independent professionals who work remotely to help your business.
-          </h1>
+      <div className="iva-container iva-hero__inner">
+        <div className="iva-hero__meta">
+          <span className="iva-hero__status">
+            <i aria-hidden="true" /> Available — taking on new clients
+          </span>
+          <span>Remote-first · Worldwide</span>
+        </div>
 
+        <h1 className="iva-hero__title">
+          The quiet force <em>behind</em> ambitious founders.
+        </h1>
+
+        <div className="iva-hero__foot">
           <p className="iva-hero__lead">
-            Hand off the time-consuming, detail-heavy work to a dedicated
-            virtual assistant — so you can focus on the parts of your business
-            only you can do.
+            Hand the detail-heavy work to a dedicated assistant — and get back
+            the hours only you can spend on growth.
           </p>
 
           <div className="iva-hero__cta">
             <Button href="#contact" variant="primary" size="lg">
-              Get Started
+              Book a free call
             </Button>
-            <Button href="#about" variant="secondary" size="lg">
-              How It Works
-            </Button>
-          </div>
-
-          <div className="iva-hero__trust">
-            {/* Avatar placeholders — drop real portraits in here later */}
-            <div className="iva-hero__avatars" aria-hidden="true">
-              {[1, 2, 3, 4].map((i) => (
-                <span key={i} />
-              ))}
+            <div className="iva-hero__trust">
+              <div className="iva-hero__avatars" aria-hidden="true">
+                {[1, 2, 3, 4].map((i) => (
+                  <span key={i} />
+                ))}
+              </div>
+              <p>
+                Trusted by <strong>850+</strong> founders
+              </p>
             </div>
-            <p>
-              Trusted by <strong>850+</strong> founders &amp; small teams
-            </p>
           </div>
         </div>
 
-        {/* Media side — image placeholder, drop a real image in here later */}
-        <div className="iva-hero__media" aria-hidden="true" />
-      </div>
-
-      {/* Trust logo strip */}
-      <div className="iva-trust-strip">
-        <div className="iva-container iva-trust-strip__inner">
-          <span className="iva-trust-strip__label">Trusted by teams at</span>
-          <div className="iva-trust-strip__logos" aria-hidden="true">
-            {TRUST_LOGOS.map((name) => (
-              <span key={name} className="iva-trust-strip__logo">{name}</span>
+        {/* Masthead marquee — client roster */}
+        <div className="iva-marquee" aria-hidden="true">
+          <div className="iva-marquee__track">
+            {[...CLIENTS, ...CLIENTS].map((name, i) => (
+              <span key={i} className="iva-marquee__item">{name}</span>
             ))}
           </div>
         </div>
