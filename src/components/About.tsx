@@ -22,7 +22,7 @@ function FAQItem({
 
 export default function About() {
   return (
-    <section className="iva-section" id="about">
+    <section className="iva-section iva-section--white" id="about">
       <div className="iva-container iva-about">
         {/* Media collage */}
         <div className="iva-about__media">
@@ -76,7 +76,7 @@ export default function About() {
             as you grow.
           </FAQItem>
 
-          <Button href="#contact" variant="accent" size="md">
+          <Button href="#contact" variant="primary" size="md">
             Read More
           </Button>
         </div>

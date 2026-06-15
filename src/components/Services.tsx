@@ -13,8 +13,8 @@ interface ServiceCardProps {
 function ServiceCard({ Icon, title, desc }: ServiceCardProps) {
   return (
     <article
-      className="svc2 svc2--soft svc2__icon--rounded"
-      style={{ '--acc': 'var(--orange-500)' } as React.CSSProperties}
+      className="svc2 svc2--soft"
+      style={{ '--acc': 'var(--primary)' } as React.CSSProperties}
     >
       <span className="svc2__icon svc2__icon--rounded">
         <Icon size={34} />
@@ -55,7 +55,7 @@ const SERVICES: ServiceCardProps[] = [
 
 export default function Services() {
   return (
-    <section className="iva-section iva-section--wash" id="services">
+    <section className="iva-section" id="services">
       <span className="iva-blob iva-svc__ringL" />
       <span className="iva-blob iva-svc__orange" />
 

@@ -54,7 +54,7 @@ export default function Testimonials() {
   const q = QUOTES[i]
 
   return (
-    <section className="iva-section iva-tst" id="testimonials">
+    <section className="iva-section iva-section--white iva-tst" id="testimonials">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
           <Eyebrow align="center">Testimonials</Eyebrow>

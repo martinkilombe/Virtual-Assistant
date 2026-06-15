@@ -1,18 +1,17 @@
 import Button from '@/components/ui/Button'
 
+const TRUST_LOGOS = ['Accenture', 'Deloitte', 'Notion', 'Stripe', 'HubSpot']
+
 export default function Hero() {
   return (
     <section className="iva-hero" id="top">
       <div className="iva-hero__grid">
         {/* Copy side */}
         <div className="iva-hero__copy">
-          <span className="iva-blob iva-hero__b1" />
-          <span className="iva-blob iva-hero__b2" />
-          <span className="iva-hero__ghost" aria-hidden="true">VA</span>
+          <span className="iva-hero__ghost" aria-hidden="true" />
 
           <h1 className="iva-hero__title">
-            Independent professionals who work{' '}
-            <span className="iva-swoosh">remotely</span> to help your business.
+            Independent professionals who work remotely to help your business.
           </h1>
 
           <p className="iva-hero__lead">
@@ -25,7 +24,7 @@ export default function Hero() {
             <Button href="#contact" variant="primary" size="lg">
               Get Started
             </Button>
-            <Button href="#about" variant="light" size="lg">
+            <Button href="#about" variant="secondary" size="lg">
               How It Works
             </Button>
           </div>
@@ -37,8 +36,8 @@ export default function Hero() {
                   key={i}
                   src={`/assets/img/portrait-${i}.jpg`}
                   alt=""
-                  width={44}
-                  height={44}
+                  width={36}
+                  height={36}
                 />
               ))}
             </div>
@@ -50,14 +49,23 @@ export default function Hero() {
 
         {/* Media side */}
         <div className="iva-hero__media" aria-hidden="true">
-          <span className="iva-blob iva-hero__ring" />
-          <span className="iva-blob iva-hero__dot" />
-          <span className="iva-blob iva-hero__orange" />
           <div className="iva-hero__photo">
             <img
               src="/assets/img/hero-headset.jpg"
               alt="A virtual assistant working at a laptop with a headset"
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Trust logo strip */}
+      <div className="iva-trust-strip">
+        <div className="iva-container iva-trust-strip__inner">
+          <span className="iva-trust-strip__label">Trusted by teams at</span>
+          <div className="iva-trust-strip__logos" aria-hidden="true">
+            {TRUST_LOGOS.map((name) => (
+              <span key={name} className="iva-trust-strip__logo">{name}</span>
+            ))}
           </div>
         </div>
       </div>

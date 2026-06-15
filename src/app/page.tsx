@@ -1,4 +1,3 @@
-import TopBar from '@/components/TopBar'
 import NavBar from '@/components/NavBar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -14,7 +13,6 @@ import RevealWrapper from '@/components/RevealWrapper'
 export default function Home() {
   return (
     <>
-      <TopBar />
       <NavBar />
       <main>
         <Hero />

@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
-type Variant = 'primary' | 'light' | 'accent' | 'dark'
+type Variant = 'primary' | 'light' | 'outline' | 'secondary' | 'dark'
 type Size = 'sm' | 'md' | 'lg'
 
 type ButtonAsButton = ButtonHTMLAttributes<HTMLButtonElement> & {

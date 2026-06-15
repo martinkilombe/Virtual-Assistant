@@ -45,7 +45,7 @@ export default function ContactCTA() {
   }
 
   return (
-    <section className="iva-section iva-section--wash iva-cta" id="contact">
+    <section className="iva-section iva-cta" id="contact">
       <span className="iva-blob iva-cta__orange" />
       <span className="iva-blob iva-cta__ring" />
 

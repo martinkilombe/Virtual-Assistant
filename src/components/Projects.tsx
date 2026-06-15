@@ -45,7 +45,7 @@ export default function Projects() {
         </div>
 
         <div className="iva-work__more">
-          <Button href="#work" variant="accent" size="md">
+          <Button href="#work" variant="outline" size="md">
             View All
           </Button>
         </div>

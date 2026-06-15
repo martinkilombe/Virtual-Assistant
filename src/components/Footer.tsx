@@ -45,6 +45,7 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className="iva-footer__col">
+          <span className="iva-footer__coral-label">Delegate smarter</span>
           <h5>Stay in the loop</h5>
           <p className="iva-footer__note">
             Tips on delegating and reclaiming your week.
