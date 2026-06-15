@@ -1,15 +1,15 @@
 import { IconArrow } from '@/components/icons'
 
 interface ProjectCardProps {
-  image: string
   title: string
   children: React.ReactNode
 }
 
-export default function ProjectCard({ image, title, children }: ProjectCardProps) {
+export default function ProjectCard({ title, children }: ProjectCardProps) {
   return (
     <article className="iva-project-card">
-      <img className="iva-project-card__img" src={image} alt={title} />
+      {/* Image placeholder — drop a real image in here later */}
+      <div className="iva-project-card__img" aria-hidden="true" />
       <div className="iva-project-card__body">
         <h3>{title}</h3>
         <p>{children}</p>

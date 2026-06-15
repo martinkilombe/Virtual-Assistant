@@ -10,8 +10,6 @@ const FOOT = [
 export default function Footer() {
   return (
     <footer className="iva-footer">
-      <span className="iva-footer__ghost" aria-hidden="true">VA</span>
-
       <div className="iva-container iva-footer__grid">
         {/* Brand column */}
         <div className="iva-footer__brand">

@@ -8,8 +8,6 @@ export default function Hero() {
       <div className="iva-hero__grid">
         {/* Copy side */}
         <div className="iva-hero__copy">
-          <span className="iva-hero__ghost" aria-hidden="true" />
-
           <h1 className="iva-hero__title">
             Independent professionals who work remotely to help your business.
           </h1>
@@ -30,15 +28,10 @@ export default function Hero() {
           </div>
 
           <div className="iva-hero__trust">
+            {/* Avatar placeholders — drop real portraits in here later */}
             <div className="iva-hero__avatars" aria-hidden="true">
               {[1, 2, 3, 4].map((i) => (
-                <img
-                  key={i}
-                  src={`/assets/img/portrait-${i}.jpg`}
-                  alt=""
-                  width={36}
-                  height={36}
-                />
+                <span key={i} />
               ))}
             </div>
             <p>
@@ -47,15 +40,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Media side */}
-        <div className="iva-hero__media" aria-hidden="true">
-          <div className="iva-hero__photo">
-            <img
-              src="/assets/img/hero-headset.jpg"
-              alt="A virtual assistant working at a laptop with a headset"
-            />
-          </div>
-        </div>
+        {/* Media side — image placeholder, drop a real image in here later */}
+        <div className="iva-hero__media" aria-hidden="true" />
       </div>
 
       {/* Trust logo strip */}

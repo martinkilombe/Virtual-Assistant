@@ -24,25 +24,11 @@ export default function About() {
   return (
     <section className="iva-section iva-section--white" id="about">
       <div className="iva-container iva-about">
-        {/* Media collage */}
+        {/* Media collage — image placeholders, drop real images in here later */}
         <div className="iva-about__media">
-          <img
-            className="iva-about__img1"
-            src="/assets/img/about-team.jpg"
-            alt="A team reviewing work together"
-          />
-          <img
-            className="iva-about__img2"
-            src="/assets/img/portrait-3.jpg"
-            alt="An assistant at a laptop"
-          />
-          <img
-            className="iva-about__img3"
-            src="/assets/img/portrait-5.jpg"
-            alt="An assistant on a call"
-          />
-          <span className="iva-blob iva-about__dot" />
-          <span className="iva-blob iva-about__orange" />
+          <div className="iva-about__img1" aria-hidden="true" />
+          <div className="iva-about__img2" aria-hidden="true" />
+          <div className="iva-about__img3" aria-hidden="true" />
           <div className="iva-about__badge" aria-label="9+ years matching great assistants">
             <span className="iva-about__badge-num">9+</span>
             <span className="iva-about__badge-lab">

@@ -10,34 +10,22 @@ const QUOTES = [
     text: 'Within a week my assistant had taken over my entire inbox and calendar. I got back the equivalent of a full day every week — it genuinely changed how I run my company.',
     name: 'Kevin Andrew',
     role: 'CEO, Northwind Studio',
-    img: '/assets/img/portrait-1.jpg',
   },
   {
     text: 'I was skeptical that someone remote could keep up with our pace. Three months in, our VA knows our process better than half the team. Total peace of mind.',
     name: 'Marisa Chen',
     role: 'Founder, Loomly Goods',
-    img: '/assets/img/portrait-2.jpg',
   },
   {
     text: 'The matching was spot on. No long contracts, no overhead — just reliable, high-quality help that scales up the moment things get busy.',
     name: 'David Okafor',
     role: 'COO, Brightpath',
-    img: '/assets/img/portrait-3.jpg',
   },
   {
     text: 'Invoicing and scheduling used to swallow my evenings. Now it just happens. My only regret is not signing up a year sooner.',
     name: 'Elena Park',
     role: 'Owner, Park & Co.',
-    img: '/assets/img/portrait-5.jpg',
   },
-]
-
-const CLUSTER = [
-  '/assets/img/portrait-2.jpg',
-  '/assets/img/portrait-1.jpg',
-  '/assets/img/portrait-3.jpg',
-  '/assets/img/portrait-4.jpg',
-  '/assets/img/portrait-5.jpg',
 ]
 
 export default function Testimonials() {
@@ -62,11 +50,11 @@ export default function Testimonials() {
         </div>
 
         <div className="iva-tst__stage">
-          {/* Left cluster */}
+          {/* Left cluster — image placeholders, drop real portraits in here later */}
           <div className="iva-tst__cluster iva-tst__cluster--l" aria-hidden="true">
-            <img className="c1" src={CLUSTER[0]} alt="" />
-            <img className="c2" src={CLUSTER[1]} alt="" />
-            <img className="c3" src={CLUSTER[2]} alt="" />
+            <span className="c1" />
+            <span className="c2" />
+            <span className="c3" />
           </div>
 
           {/* Quote panel */}
@@ -103,11 +91,11 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right cluster */}
+          {/* Right cluster — image placeholders, drop real portraits in here later */}
           <div className="iva-tst__cluster iva-tst__cluster--r" aria-hidden="true">
-            <img className="c1" src={CLUSTER[3]} alt="" />
-            <img className="c2" src={CLUSTER[4]} alt="" />
-            <img className="c3" src={CLUSTER[0]} alt="" />
+            <span className="c1" />
+            <span className="c2" />
+            <span className="c3" />
           </div>
         </div>
       </div>

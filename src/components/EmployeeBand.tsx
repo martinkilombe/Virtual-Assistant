@@ -11,17 +11,10 @@ const STATS = [
 export default function EmployeeBand() {
   return (
     <section className="iva-band">
-      <span className="iva-blob iva-band__ringTR" />
-      <span className="iva-blob iva-band__ringBL" />
-      <span className="iva-blob iva-band__dot" />
-
       <div className="iva-container iva-band__grid">
+        {/* Image placeholder — drop a real image in here later */}
         <div className="iva-band__media">
-          <span className="iva-blob iva-band__orange" />
-          <img
-            src="/assets/img/portrait-4.jpg"
-            alt="A virtual assistant ready to help"
-          />
+          <div className="iva-band__photo" aria-hidden="true" />
         </div>
 
         <div className="iva-band__copy">

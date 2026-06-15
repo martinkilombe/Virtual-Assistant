@@ -46,9 +46,6 @@ export default function ContactCTA() {
 
   return (
     <section className="iva-section iva-cta" id="contact">
-      <span className="iva-blob iva-cta__orange" />
-      <span className="iva-blob iva-cta__ring" />
-
       <div className="iva-container iva-cta__grid">
         {/* Left panel */}
         <div className="iva-cta__panel">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Button from '@/components/ui/Button'
-import { IconSearch, IconBag, IconMenu, IconX } from '@/components/icons'
+import { IconSearch, IconMenu, IconX } from '@/components/icons'
 import { smoothTo } from '@/utils/smoothTo'
 
 const NAV = [
@@ -78,9 +78,6 @@ export default function NavBar() {
         <div className="iva-nav__actions">
           <button className="iva-nav__icon" aria-label="Search">
             <IconSearch size={20} />
-          </button>
-          <button className="iva-nav__icon" aria-label="Cart">
-            <IconBag size={20} />
           </button>
           <Button
             href="#contact"

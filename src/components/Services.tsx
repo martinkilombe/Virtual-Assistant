@@ -56,9 +56,6 @@ const SERVICES: ServiceCardProps[] = [
 export default function Services() {
   return (
     <section className="iva-section" id="services">
-      <span className="iva-blob iva-svc__ringL" />
-      <span className="iva-blob iva-svc__orange" />
-
       <div className="iva-container iva-svc">
         <div className="iva-svc__copy">
           <Eyebrow>Our Services</Eyebrow>
