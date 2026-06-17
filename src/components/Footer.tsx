@@ -1,10 +1,20 @@
+import Link from 'next/link'
 import { IconFacebook, IconTwitter, IconLinkedin } from '@/components/icons'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const FOOT = [
-  { h: 'Company',  links: ['About Us', 'Case Studies'] },
-  { h: 'Services', links: ['Research & Reports', 'Expensing & Invoicing', 'Scheduling', 'Marketing'] },
-  { h: 'Support',  links: ['Contact', 'Help Center', 'Privacy Policy'] },
+  { h: 'Company',  links: [{ label: 'About Us', href: '#' }, { label: 'Case Studies', href: '#' }] },
+  { h: 'Services', links: [
+    { label: 'Research & Reports', href: '#' },
+    { label: 'Expensing & Invoicing', href: '#' },
+    { label: 'Scheduling', href: '#' },
+    { label: 'Marketing', href: '#' },
+  ] },
+  { h: 'Support',  links: [
+    { label: 'Contact', href: '#' },
+    { label: 'Help Center', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+  ] },
 ]
 
 export default function Footer() {
@@ -33,8 +43,8 @@ export default function Footer() {
             <h5>{col.h}</h5>
             <ul>
               {col.links.map((link) => (
-                <li key={link}>
-                  <a href="#">{link}</a>
+                <li key={link.label}>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
