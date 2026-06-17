@@ -2,20 +2,14 @@ import { IconFacebook, IconTwitter, IconLinkedin } from '@/components/icons'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const FOOT = [
-  { h: 'Company',  links: ['About Us', 'How It Works', 'Careers', 'Case Studies'] },
+  { h: 'Company',  links: ['About Us', 'Case Studies'] },
   { h: 'Services', links: ['Research & Reports', 'Expensing & Invoicing', 'Scheduling', 'Marketing'] },
-  { h: 'Support',  links: ['Contact', 'Pricing', 'Help Center', 'Privacy Policy'] },
+  { h: 'Support',  links: ['Contact', 'Help Center', 'Privacy Policy'] },
 ]
 
 export default function Footer() {
   return (
     <footer className="iva-footer">
-      <div className="iva-container">
-        <p className="iva-footer__word">
-          Instant<em>VA</em>
-        </p>
-      </div>
-
       <div className="iva-container iva-footer__grid">
         {/* Brand column */}
         <div className="iva-footer__brand">

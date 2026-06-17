@@ -995,27 +995,15 @@ em { font-style: italic; }
   position: relative;
   background: var(--ink);
   color: var(--on-dark);
-  padding: clamp(72px, 9vw, 120px) 0 0;
+  padding: clamp(56px, 7vw, 96px) 0 0;
   overflow: hidden;
 }
-.iva-footer__word {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(64px, 16vw, 220px);
-  line-height: 0.86;
-  letter-spacing: -0.03em;
-  color: var(--on-dark);
-  margin: 0 0 clamp(48px, 7vw, 88px);
-}
-.iva-footer__word em { font-style: italic; color: var(--clay-soft); font-weight: 400; }
 .iva-footer__grid {
   position: relative; z-index: 2;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr 1.3fr;
   gap: 40px;
   padding-bottom: 64px;
-  border-top: 1px solid var(--on-dark-line);
-  padding-top: 56px;
 }
 .iva-footer__brand p {
   margin: 20px 0 24px;
