@@ -5,10 +5,10 @@ import NewsletterForm from '@/components/NewsletterForm'
 const FOOT = [
   { h: 'Company',  links: [{ label: 'About Us', href: '#' }, { label: 'Case Studies', href: '#' }] },
   { h: 'Services', links: [
-    { label: 'Research & Reports', href: '#' },
-    { label: 'Expensing & Invoicing', href: '#' },
-    { label: 'Scheduling', href: '#' },
-    { label: 'Marketing', href: '#' },
+    { label: 'Research & Reports', href: '/services#research-reports' },
+    { label: 'Expensing & Invoicing', href: '/services#expensing-invoicing' },
+    { label: 'Scheduling', href: '/services#scheduling-planning' },
+    { label: 'Marketing', href: '/services#marketing-social' },
   ] },
   { h: 'Support',  links: [
     { label: 'Contact', href: '#' },

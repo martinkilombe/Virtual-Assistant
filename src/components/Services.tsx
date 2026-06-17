@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import CheckItem from '@/components/ui/CheckItem'
@@ -5,6 +6,7 @@ import { IconArrow } from '@/components/icons'
 
 interface ServiceRow {
   num: string
+  slug: string
   title: string
   desc: string
 }
@@ -12,21 +14,25 @@ interface ServiceRow {
 const SERVICES: ServiceRow[] = [
   {
     num: '01',
+    slug: 'research-reports',
     title: 'Research & Reports',
     desc: 'Market scans, data pulls, and tidy reports, delivered ready to act on.',
   },
   {
     num: '02',
+    slug: 'expensing-invoicing',
     title: 'Expensing & Invoicing',
     desc: 'Invoices sent, receipts filed, expenses reconciled down to the cent.',
   },
   {
     num: '03',
+    slug: 'scheduling-planning',
     title: 'Scheduling & Planning',
     desc: 'A calendar that runs itself: meetings booked, conflicts resolved.',
   },
   {
     num: '04',
+    slug: 'marketing-social',
     title: 'Marketing & Social',
     desc: 'Posts scheduled, inbox triaged, and your audience kept warm daily.',
   },
@@ -57,7 +63,7 @@ export default function Services() {
 
         <div className="iva-svc__rows">
           {SERVICES.map((s) => (
-            <a key={s.num} href="#contact" className="svc-row">
+            <Link key={s.num} href={`/services#${s.slug}`} className="svc-row">
               <span className="svc-row__num">{s.num}</span>
               <span>
                 <span className="svc-row__title">{s.title}</span>
@@ -66,8 +72,12 @@ export default function Services() {
               <span className="svc-row__arrow">
                 <IconArrow size={22} />
               </span>
-            </a>
+            </Link>
           ))}
+          <Link href="/services" className="iva-svc__viewall">
+            View all services
+            <IconArrow size={16} />
+          </Link>
         </div>
       </div>
     </section>

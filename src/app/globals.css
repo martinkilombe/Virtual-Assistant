@@ -716,6 +716,21 @@ em { font-style: italic; }
 .svc-row:hover .svc-row__title { color: var(--clay-text); }
 .svc-row:hover .svc-row__arrow { opacity: 1; transform: none; color: var(--clay); }
 
+.iva-svc__viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--clay-text);
+}
+.iva-svc__viewall svg { transition: transform var(--dur-fast); }
+.iva-svc__viewall:hover { color: var(--ink); }
+.iva-svc__viewall:hover svg { transform: translateX(3px); }
+
 @media (max-width: 880px) {
   .iva-svc { grid-template-columns: 1fr; }
   .iva-svc__copy { position: static; }
@@ -1439,6 +1454,122 @@ em { font-style: italic; }
     padding-bottom: 4px;
   }
 }
+
+/* ============================================================
+   SECTION: Services page — scope ledger modules
+   ============================================================ */
+.iva-svc-hero { padding-bottom: clamp(40px, 5vw, 56px); }
+
+.iva-svc-modules { display: flex; flex-direction: column; }
+.iva-svc-module {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(40px, 6vw, 88px);
+  padding: clamp(56px, 7vw, 96px) 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 132px;
+}
+.iva-svc-modules > .iva-svc-module:last-child { border-bottom: 1px solid var(--line); }
+
+.iva-svc-module__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--paper-2);
+  color: var(--clay-text);
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.iva-svc-module__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: var(--lh-head);
+  margin: 0 0 14px;
+}
+.iva-svc-module__lead {
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  margin: 0 0 24px;
+  max-width: 42ch;
+}
+.iva-svc-module__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--clay-text);
+}
+.iva-svc-module__link svg { transition: transform var(--dur-fast); }
+.iva-svc-module__link:hover svg { transform: translateX(3px); }
+.iva-svc-module__link:hover { color: var(--ink); }
+
+.iva-svc-ledger {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  border-top: 1px solid var(--line-soft);
+}
+.iva-svc-ledger__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: var(--fs-sm);
+  color: var(--ink-soft);
+}
+.iva-svc-ledger__row svg { flex-shrink: 0; margin-top: 2px; color: var(--clay-text); }
+
+.iva-svc-module__exclude {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+.iva-svc-module__exclude strong { color: var(--ink-soft); font-weight: 600; }
+
+.iva-svc-typical {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: baseline;
+  padding: 16px 18px;
+  background: var(--paper-2);
+  border-radius: var(--r-sm);
+}
+.iva-svc-typical__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.iva-svc-typical__value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+}
+
+@media (max-width: 880px) {
+  .iva-svc-module { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.iva-svc-faq { max-width: 760px; margin-inline: auto; }
+.iva-svc-faq__more { max-width: 760px; margin: 36px auto 0; text-align: center; }
+
+/* Solo (media-less) variant of the deep-green band — centered copy + stats only */
+.iva-band--solo .iva-band__grid { grid-template-columns: 1fr; max-width: 700px; margin-inline: auto; text-align: center; }
+.iva-band--solo .iva-band__copy h2 { max-width: none; }
+.iva-band--solo .iva-band__lead { margin-inline: auto; }
+.iva-band--solo .iva-band__stats { justify-content: center; }
 
 /* ============================================================
    Reveal-on-scroll
