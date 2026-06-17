@@ -22,7 +22,21 @@ interface FormErrors {
 
 const EMPTY: FormValues = { name: '', email: '', phone: '', subject: '', message: '' }
 
-export default function ContactCTA() {
+interface ContactCTAProps {
+  eyebrow?: string
+  title?: React.ReactNode
+  description?: string
+}
+
+export default function ContactCTA({
+  eyebrow = '06 · Contact',
+  title = (
+    <>
+      Let&apos;s take it <em>off</em> your plate.
+    </>
+  ),
+  description = "Tell us what's eating your week. We'll match you with the right assistant, usually within a day.",
+}: ContactCTAProps) {
   const [v, setV] = useState<FormValues>(EMPTY)
   const [err, setErr] = useState<FormErrors>({})
   const [sent, setSent] = useState(false)
@@ -49,14 +63,9 @@ export default function ContactCTA() {
       <div className="iva-container iva-cta__grid">
         {/* Left panel */}
         <div className="iva-cta__panel">
-          <Eyebrow color="white">06 · Contact</Eyebrow>
-          <h2 className="iva-onaccent">
-            Let&apos;s take it <em>off</em> your plate.
-          </h2>
-          <p>
-            Tell us what&apos;s eating your week. We&apos;ll match you with the
-            right assistant, usually within a day.
-          </p>
+          <Eyebrow color="white">{eyebrow}</Eyebrow>
+          <h2 className="iva-onaccent">{title}</h2>
+          <p>{description}</p>
           <Button href="#contact" variant="light" size="lg">
             Book a free call
           </Button>

@@ -12,7 +12,7 @@ const FOOT = [
   ] },
   { h: 'Support',  links: [
     { label: 'Contact', href: '#' },
-    { label: 'Help Center', href: '#' },
+    { label: 'Help Center', href: '/help-center' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
   ] },
 ]

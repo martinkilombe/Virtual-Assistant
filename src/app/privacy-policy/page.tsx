@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 import Eyebrow from '@/components/ui/Eyebrow'
+import PrivacyIndex from '@/components/PrivacyIndex'
 import { IconArrowL } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   {
+    id: 'introduction',
     num: '01',
     title: 'Introduction',
     body: (
@@ -24,6 +26,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'information-we-collect',
     num: '02',
     title: 'Information we collect',
     body: (
@@ -49,6 +52,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'how-we-use-your-information',
     num: '03',
     title: 'How we use your information',
     body: (
@@ -65,6 +69,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'cookies-tracking',
     num: '04',
     title: 'Cookies & tracking technologies',
     body: (
@@ -76,6 +81,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'how-we-share-your-information',
     num: '05',
     title: 'How we share your information',
     body: (
@@ -100,6 +106,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'data-retention',
     num: '06',
     title: 'Data retention',
     body: (
@@ -112,6 +119,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'data-security',
     num: '07',
     title: 'Data security',
     body: (
@@ -123,6 +131,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'your-rights-choices',
     num: '08',
     title: 'Your rights & choices',
     body: (
@@ -134,6 +143,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'international-transfers',
     num: '09',
     title: 'International data transfers',
     body: (
@@ -145,6 +155,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'childrens-privacy',
     num: '10',
     title: "Children's privacy",
     body: (
@@ -156,6 +167,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'policy-changes',
     num: '11',
     title: 'Changes to this policy',
     body: (
@@ -167,6 +179,7 @@ const SECTIONS = [
     ),
   },
   {
+    id: 'contact-us',
     num: '12',
     title: 'Contact us',
     body: (
@@ -177,6 +190,12 @@ const SECTIONS = [
       </p>
     ),
   },
+]
+
+const META = [
+  { label: 'Effective date', value: 'June 17, 2026' },
+  { label: 'Applies to', value: 'instantva.com & client services' },
+  { label: 'Contact', value: 'privacy@instantva.com' },
 ]
 
 export default function PrivacyPolicy() {
@@ -205,21 +224,36 @@ export default function PrivacyPolicy() {
               How we collect, use, and protect your personal data across our website and virtual
               assistant services.
             </p>
-            <span className="iva-legal-hero__updated">Last updated: June 17, 2026</span>
+
+            <div className="iva-legal-meta">
+              {META.map((m) => (
+                <div key={m.label} className="iva-legal-meta__row">
+                  <span className="iva-legal-meta__label">{m.label}</span>
+                  <span className="iva-legal-meta__value">{m.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="iva-legal__rows">
-          <div className="iva-container">
-            {SECTIONS.map((s) => (
-              <div key={s.num} className="iva-legal-row">
-                <span className="iva-legal-row__num">{s.num}</span>
-                <div className="iva-legal-row__body">
-                  <h2>{s.title}</h2>
-                  {s.body}
+        <section>
+          <div className="iva-container iva-legal-layout">
+            <aside className="iva-legal-rail">
+              <span className="iva-legal-rail__label">On this page</span>
+              <PrivacyIndex sections={SECTIONS.map((s) => ({ id: s.id, label: s.title }))} />
+            </aside>
+
+            <div className="iva-legal__rows">
+              {SECTIONS.map((s) => (
+                <div key={s.id} id={s.id} className="iva-legal-row">
+                  <div className="iva-legal-row__body">
+                    <span className="iva-legal-row__tag">Clause {s.num}</span>
+                    <h2>{s.title}</h2>
+                    {s.body}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
       </main>
