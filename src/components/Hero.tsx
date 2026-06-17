@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="iva-container iva-hero__inner">
         <div className="iva-hero__meta">
           <span className="iva-hero__status">
-            <i aria-hidden="true" /> Available — taking on new clients
+            <i aria-hidden="true" /> Available, taking on new clients
           </span>
           <span>Remote-first · Worldwide</span>
         </div>
@@ -21,7 +21,7 @@ export default function Hero() {
 
         <div className="iva-hero__foot">
           <p className="iva-hero__lead">
-            Hand the detail-heavy work to a dedicated assistant — and get back
+            Hand the detail-heavy work to a dedicated assistant, and get back
             the hours only you can spend on growth.
           </p>
 
@@ -32,7 +32,7 @@ export default function Hero() {
             <div className="iva-hero__trust">
               <div className="iva-hero__avatars" aria-hidden="true">
                 {AVATARS.map((id) => (
-                  <img key={id} src={`https://i.pravatar.cc/72?img=${id}`} alt="" />
+                  <img key={id} src={`/assets/img/avatars/founder-${id}.jpg`} alt="" />
                 ))}
               </div>
               <p>

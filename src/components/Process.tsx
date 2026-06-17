@@ -23,13 +23,13 @@ export default function Process() {
     <section className="iva-section iva-section--paper" id="process">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">03 — Process</Eyebrow>
+          <Eyebrow align="center">03 · Process</Eyebrow>
           <h2 className="iva-serif">
             From hello to handled, in <em>days</em>.
           </h2>
           <p className="iva-lead">
-            Getting matched with the right assistant takes days, not weeks —
-            here is how the whole thing works.
+            Getting matched with the right assistant takes days, not weeks.
+            Here is how the whole thing works.
           </p>
         </div>
 

@@ -13,7 +13,7 @@ const SERVICES: ServiceRow[] = [
   {
     num: '01',
     title: 'Research & Reports',
-    desc: 'Market scans, data pulls, and tidy reports — delivered ready to act on.',
+    desc: 'Market scans, data pulls, and tidy reports, delivered ready to act on.',
   },
   {
     num: '02',
@@ -23,7 +23,7 @@ const SERVICES: ServiceRow[] = [
   {
     num: '03',
     title: 'Scheduling & Planning',
-    desc: 'A calendar that runs itself — meetings booked, conflicts resolved.',
+    desc: 'A calendar that runs itself: meetings booked, conflicts resolved.',
   },
   {
     num: '04',
@@ -37,7 +37,7 @@ export default function Services() {
     <section className="iva-section iva-section--panel" id="services">
       <div className="iva-container iva-svc">
         <div className="iva-svc__copy">
-          <Eyebrow>02 — Services</Eyebrow>
+          <Eyebrow>02 · Services</Eyebrow>
           <h2 className="iva-serif">
             One assistant, an <em>entire</em> skill set.
           </h2>
@@ -47,7 +47,7 @@ export default function Services() {
           </p>
           <ul className="iva-svc__list">
             <CheckItem>Dedicated assistant matched to your needs</CheckItem>
-            <CheckItem>Flexible hours — scale up or down anytime</CheckItem>
+            <CheckItem>Flexible hours, scale up or down anytime</CheckItem>
             <CheckItem>No long contracts or hidden fees</CheckItem>
           </ul>
           <Button href="#contact" variant="primary" size="md">

@@ -24,7 +24,7 @@ export default function Footer() {
           </span>
           <p>
             Helping ambitious teams stay productive with smart, reliable
-            virtual assistant support — every day.
+            virtual assistant support, every day.
           </p>
           <div className="iva-footer__social">
             <a href="#" aria-label="Facebook"><IconFacebook size={18} /></a>

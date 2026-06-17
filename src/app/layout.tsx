@@ -24,11 +24,11 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Instant VA — The quiet force behind ambitious founders',
+  title: 'Instant VA: The quiet force behind ambitious founders',
   description:
-    'Hand the detail-heavy work to a dedicated virtual assistant — and get back the hours only you can spend on growth.',
+    'Hand the detail-heavy work to a dedicated virtual assistant, and get back the hours only you can spend on growth.',
   openGraph: {
-    title: 'Instant VA — The quiet force behind ambitious founders',
+    title: 'Instant VA: The quiet force behind ambitious founders',
     description: 'Remote-first virtual assistants for founders & small teams.',
     type: 'website',
   },

@@ -35,14 +35,14 @@ export default function About() {
 
         {/* Copy */}
         <div className="iva-about__copy">
-          <Eyebrow>01 — About</Eyebrow>
+          <Eyebrow>01 · About</Eyebrow>
           <h2 className="iva-serif">
             We make the running of a business feel <em>effortless</em>.
           </h2>
           <p className="iva-lead">
             From inbox triage to calendar wrangling and invoicing, our
             assistants quietly handle the busywork that keeps a business
-            moving — reliably, every single day.
+            moving, reliably, every single day.
           </p>
 
           <FAQItem n="A" q="How we help your business">
@@ -52,7 +52,7 @@ export default function About() {
           </FAQItem>
           <FAQItem n="B" q="Why teams stay with us">
             Every assistant is background-checked, fluent in English, and
-            backed by a dedicated success manager — so quality holds steady
+            backed by a dedicated success manager, so quality holds steady
             as you grow.
           </FAQItem>
 

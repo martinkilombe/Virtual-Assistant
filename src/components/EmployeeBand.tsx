@@ -23,7 +23,7 @@ export default function EmployeeBand() {
             A real professional, <em>not</em> a chatbot.
           </h2>
           <p className="iva-band__lead">
-            Every Instant VA is a vetted, full-time professional — never a bot,
+            Every Instant VA is a vetted, full-time professional, never a bot,
             never a gig worker. They become part of your team, learn how you
             work, and grow with you.
           </p>

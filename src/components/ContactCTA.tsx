@@ -49,13 +49,13 @@ export default function ContactCTA() {
       <div className="iva-container iva-cta__grid">
         {/* Left panel */}
         <div className="iva-cta__panel">
-          <Eyebrow color="white">06 — Contact</Eyebrow>
+          <Eyebrow color="white">06 · Contact</Eyebrow>
           <h2 className="iva-onaccent">
             Let&apos;s take it <em>off</em> your plate.
           </h2>
           <p>
             Tell us what&apos;s eating your week. We&apos;ll match you with the
-            right assistant — usually within a day.
+            right assistant, usually within a day.
           </p>
           <Button href="#contact" variant="light" size="lg">
             Book a free call
@@ -82,7 +82,7 @@ export default function ContactCTA() {
               <span className="iva-cta__thankicon">
                 <IconCheck size={34} />
               </span>
-              <h3>Message sent — thank you!</h3>
+              <h3>Message sent, thank you!</h3>
               <p>
                 We&apos;ve received your details and will be in touch within
                 one business day.
