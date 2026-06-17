@@ -13,7 +13,7 @@
   --ink:        #17171c;
   --ink-2:      #0e0e11;
   --ink-soft:   #212121;
-  --muted:      #93939f;
+  --muted:      #636370;
   --paper:      #ffffff;
   --paper-2:    #eeece7;
   --paper-3:    #d9d9dd;
@@ -26,6 +26,8 @@
   /* Coral accent — editorial, used sparingly */
   --clay:       #ff7759;
   --clay-soft:  #ffad9b;
+  /* Darker accent for clay used as readable text on light surfaces (--clay fails AA as text) */
+  --clay-text:  #c2410c;
 
   /* On-dark surfaces */
   --on-dark:        #ffffff;
@@ -199,7 +201,7 @@ em { font-style: italic; }
 
 /* Display sans — applied to large headlines */
 .iva-serif { font-family: var(--font-display); font-weight: 500; letter-spacing: var(--ls-head); }
-.iva-serif em { font-style: italic; color: var(--clay); font-weight: 400; }
+.iva-serif em { font-style: italic; color: var(--clay-text); font-weight: 400; }
 
 /* ---- Logo ---- */
 .iva-logo {
@@ -275,7 +277,7 @@ em { font-style: italic; }
   transform-origin: right;
   transition: transform var(--dur) var(--ease-out);
 }
-.iva-btn--secondary:hover { color: var(--clay); }
+.iva-btn--secondary:hover { color: var(--clay-text); }
 .iva-btn--secondary:hover::after { transform: scaleX(0); }
 
 /* ============================================================
@@ -493,7 +495,7 @@ em { font-style: italic; }
   margin: 0;
   max-width: 16ch;
 }
-.iva-hero__title em { font-style: italic; color: var(--clay); font-weight: 400; }
+.iva-hero__title em { font-style: italic; color: var(--clay-text); font-weight: 400; }
 
 .iva-hero__foot {
   display: grid;
@@ -626,7 +628,7 @@ em { font-style: italic; }
 .iva-faq__n {
   font-family: var(--font-mono);
   font-size: var(--fs-label);
-  color: var(--clay);
+  color: var(--clay-text);
   letter-spacing: var(--ls-wide);
   padding-top: 5px;
   flex-shrink: 0;
@@ -680,7 +682,7 @@ em { font-style: italic; }
   font-family: var(--font-mono);
   font-size: var(--fs-label);
   letter-spacing: var(--ls-wide);
-  color: var(--clay);
+  color: var(--clay-text);
 }
 .svc-row__title {
   display: block;
@@ -699,7 +701,7 @@ em { font-style: italic; }
   transform: translateX(-10px);
   transition: opacity var(--dur), transform var(--dur) var(--ease-out), color var(--dur);
 }
-.svc-row:hover .svc-row__title { color: var(--clay); }
+.svc-row:hover .svc-row__title { color: var(--clay-text); }
 .svc-row:hover .svc-row__arrow { opacity: 1; transform: none; color: var(--clay); }
 
 @media (max-width: 880px) {
@@ -852,7 +854,7 @@ em { font-style: italic; }
   transition: color var(--dur);
 }
 .iva-project-card__more svg { transition: transform var(--dur) var(--ease-out); }
-.iva-project-card:hover .iva-project-card__more { color: var(--clay); }
+.iva-project-card:hover .iva-project-card__more { color: var(--clay-text); }
 .iva-project-card:hover .iva-project-card__more svg { transform: translateX(5px); }
 
 @media (max-width: 880px) {
@@ -883,7 +885,7 @@ em { font-style: italic; }
   letter-spacing: var(--ls-head);
   animation: fadeUp 480ms var(--ease-out);
 }
-.iva-tst__quote em { font-style: italic; color: var(--clay); }
+.iva-tst__quote em { font-style: italic; color: var(--clay-text); }
 .iva-tst__author { display: flex; flex-direction: column; gap: 4px; margin-bottom: 36px; }
 .iva-tst__name { font-family: var(--font-body); font-weight: 600; color: var(--ink); font-size: var(--fs-sm); }
 .iva-tst__role {
