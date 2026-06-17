@@ -2,6 +2,8 @@ import Button from '@/components/ui/Button'
 
 const CLIENTS = ['Northwind', 'Loomly', 'Brightpath', 'Park & Co.', 'Cedar', 'Møller', 'Atlas']
 
+const AVATARS = [12, 47, 65, 33]
+
 export default function Hero() {
   return (
     <section className="iva-hero" id="top">
@@ -29,8 +31,8 @@ export default function Hero() {
             </Button>
             <div className="iva-hero__trust">
               <div className="iva-hero__avatars" aria-hidden="true">
-                {[1, 2, 3, 4].map((i) => (
-                  <span key={i} />
+                {AVATARS.map((id) => (
+                  <img key={id} src={`https://i.pravatar.cc/72?img=${id}`} alt="" />
                 ))}
               </div>
               <p>
