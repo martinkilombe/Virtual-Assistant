@@ -696,17 +696,41 @@ em { font-style: italic; }
   letter-spacing: var(--ls-wide);
   color: var(--clay-text);
 }
+.svc-row__titlewrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+}
+.svc-row__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--paper-2);
+  color: var(--clay-text);
+  border: 1px solid var(--line);
+}
 .svc-row__title {
   display: block;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(20px, 2.4vw, 32px);
   color: var(--ink);
-  margin: 0 0 5px;
   line-height: var(--lh-head);
   transition: color var(--dur);
 }
-.svc-row__desc { font-size: var(--fs-sm); color: var(--muted); margin: 0; max-width: 46ch; }
+.svc-row__desc { font-size: var(--fs-sm); color: var(--muted); margin: 0 0 10px; max-width: 46ch; }
+.svc-row__meta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--clay-text);
+}
 .svc-row__arrow {
   color: var(--muted);
   opacity: 0;
@@ -1471,6 +1495,14 @@ em { font-style: italic; }
 }
 .iva-svc-modules > .iva-svc-module:last-child { border-bottom: 1px solid var(--line); }
 
+.iva-svc-module__index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wide);
+  color: var(--clay-text);
+  margin-bottom: 14px;
+}
 .iva-svc-module__icon {
   display: inline-flex;
   align-items: center;
@@ -1494,8 +1526,27 @@ em { font-style: italic; }
   color: var(--muted);
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   max-width: 42ch;
+}
+.iva-svc-module__best {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--clay);
+  padding-left: 14px;
+  margin: 0 0 28px;
+  max-width: 42ch;
+  font-size: var(--fs-sm);
+  color: var(--ink-soft);
+  line-height: var(--lh-relaxed);
+}
+.iva-svc-module__best span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .iva-svc-module__link {
   display: inline-flex;
@@ -1536,30 +1587,66 @@ em { font-style: italic; }
 }
 .iva-svc-module__exclude strong { color: var(--ink-soft); font-weight: 600; }
 
-.iva-svc-typical {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 16px;
-  align-items: baseline;
-  padding: 16px 18px;
+.iva-svc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 18px;
   background: var(--paper-2);
   border-radius: var(--r-sm);
 }
-.iva-svc-typical__label {
+.iva-svc-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-inline: 4px;
+  border-left: 1px solid var(--line);
+}
+.iva-svc-stats__item:first-child { border-left: none; }
+.iva-svc-stats__value {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 500;
+  color: var(--ink);
+}
+.iva-svc-stats__label {
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.iva-svc-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: baseline;
+}
+.iva-svc-tools__label {
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--muted);
 }
-.iva-svc-typical__value {
-  font-family: var(--font-mono);
+.iva-svc-tools__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.iva-svc-tools__chip {
   font-size: var(--fs-sm);
-  color: var(--ink);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-full);
+  padding: 5px 12px;
 }
 
 @media (max-width: 880px) {
   .iva-svc-module { grid-template-columns: 1fr; gap: 28px; }
+}
+
+@media (max-width: 480px) {
+  .iva-svc-stats { grid-template-columns: 1fr; gap: 14px; }
+  .iva-svc-stats__item { border-left: none; padding-inline: 0; padding-top: 10px; border-top: 1px solid var(--line); }
+  .iva-svc-stats__item:first-child { border-top: none; padding-top: 0; }
 }
 
 .iva-svc-faq { max-width: 760px; margin-inline: auto; }

@@ -2,13 +2,21 @@ import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import CheckItem from '@/components/ui/CheckItem'
-import { IconArrow } from '@/components/icons'
+import {
+  IconArrow,
+  IconResearch,
+  IconInvoice,
+  IconCalendar,
+  IconRocket,
+} from '@/components/icons'
 
 interface ServiceRow {
   num: string
   slug: string
   title: string
   desc: string
+  meta: string
+  icon: React.ComponentType<{ size?: number }>
 }
 
 const SERVICES: ServiceRow[] = [
@@ -17,24 +25,32 @@ const SERVICES: ServiceRow[] = [
     slug: 'research-reports',
     title: 'Research & Reports',
     desc: 'Market scans, data pulls, and tidy reports, delivered ready to act on.',
+    meta: '3 briefs / week',
+    icon: IconResearch,
   },
   {
     num: '02',
     slug: 'expensing-invoicing',
     title: 'Expensing & Invoicing',
     desc: 'Invoices sent, receipts filed, expenses reconciled down to the cent.',
+    meta: '12 invoices / week',
+    icon: IconInvoice,
   },
   {
     num: '03',
     slug: 'scheduling-planning',
     title: 'Scheduling & Planning',
     desc: 'A calendar that runs itself: meetings booked, conflicts resolved.',
+    meta: '18 meetings / week',
+    icon: IconCalendar,
   },
   {
     num: '04',
     slug: 'marketing-social',
     title: 'Marketing & Social',
     desc: 'Posts scheduled, inbox triaged, and your audience kept warm daily.',
+    meta: '5 posts / week',
+    icon: IconRocket,
   },
 ]
 
@@ -62,18 +78,27 @@ export default function Services() {
         </div>
 
         <div className="iva-svc__rows">
-          {SERVICES.map((s) => (
-            <Link key={s.num} href={`/services#${s.slug}`} className="svc-row">
-              <span className="svc-row__num">{s.num}</span>
-              <span>
-                <span className="svc-row__title">{s.title}</span>
-                <p className="svc-row__desc">{s.desc}</p>
-              </span>
-              <span className="svc-row__arrow">
-                <IconArrow size={22} />
-              </span>
-            </Link>
-          ))}
+          {SERVICES.map((s) => {
+            const Icon = s.icon
+            return (
+              <Link key={s.num} href={`/services#${s.slug}`} className="svc-row">
+                <span className="svc-row__num">{s.num}</span>
+                <span>
+                  <span className="svc-row__titlewrap">
+                    <span className="svc-row__icon" aria-hidden="true">
+                      <Icon size={20} />
+                    </span>
+                    <span className="svc-row__title">{s.title}</span>
+                  </span>
+                  <p className="svc-row__desc">{s.desc}</p>
+                  <span className="svc-row__meta">{s.meta}</span>
+                </span>
+                <span className="svc-row__arrow">
+                  <IconArrow size={22} />
+                </span>
+              </Link>
+            )
+          })}
           <Link href="/services" className="iva-svc__viewall">
             View all services
             <IconArrow size={16} />

@@ -24,74 +24,105 @@ export const metadata: Metadata = {
 
 interface ServiceModule {
   id: string
+  num: string
   icon: React.ComponentType<{ size?: number }>
   title: string
   lead: string
+  bestFor: string
   included: string[]
+  tools: string[]
   excluded: string
-  typical: string
+  stats: { value: string; label: string }[]
 }
 
 const SERVICES: ServiceModule[] = [
   {
     id: 'research-reports',
+    num: '01',
     icon: IconResearch,
     title: 'Research & Reports',
     lead: 'Market scans, competitor pulls, and data turned into a report you can act on, not another tab to read later.',
+    bestFor: 'Founders who need data turned into decisions, not more tabs.',
     included: [
       'Competitor and market research briefs',
       'Data pulls from spreadsheets, CRMs, and public sources',
       'Slide decks and one-page summaries for stakeholders',
       'Recurring weekly or monthly reporting',
     ],
+    tools: ['Google Workspace', 'Notion', 'Airtable', 'Slides / PowerPoint'],
     excluded:
       'Not included: strategic or legal/financial recommendations that require a licensed advisor — your assistant will flag these and help you route them.',
-    typical: '3 competitor briefs · 1 board-ready deck · 2 recurring reports sent on schedule',
+    stats: [
+      { value: '3', label: 'Competitor briefs' },
+      { value: '1', label: 'Board-ready deck' },
+      { value: '2', label: 'Recurring reports' },
+    ],
   },
   {
     id: 'expensing-invoicing',
+    num: '02',
     icon: IconInvoice,
     title: 'Expensing & Invoicing',
     lead: 'Invoices out the door on time, receipts filed before they pile up, books that reconcile to the cent.',
+    bestFor: 'Service businesses chasing payments between client calls.',
     included: [
       'Client invoicing and payment follow-up',
       'Receipt capture and expense categorization',
       'Reconciliation against bank and card statements',
       'Light bookkeeping handoff to your accountant',
     ],
+    tools: ['QuickBooks', 'Xero', 'Expensify', 'Stripe'],
     excluded:
       'Not included: tax filing or certified accounting — we coordinate with your accountant, not replace them.',
-    typical: '12 invoices sent · 40 receipts filed · 3 overdue payments chased',
+    stats: [
+      { value: '12', label: 'Invoices sent' },
+      { value: '40', label: 'Receipts filed' },
+      { value: '3', label: 'Overdue chased' },
+    ],
   },
   {
     id: 'scheduling-planning',
+    num: '03',
     icon: IconCalendar,
     title: 'Scheduling & Planning',
     lead: 'A calendar that runs itself: meetings booked, conflicts resolved, travel mapped out before you have to ask.',
+    bestFor: 'Leaders double-booked across time zones and teams.',
     included: [
       'Meeting scheduling and calendar management across time zones',
       'Conflict resolution and rebooking',
       'Travel itineraries and logistics',
       'Reminders for deadlines and follow-ups',
     ],
+    tools: ['Google Calendar', 'Calendly', 'Outlook', 'TripIt'],
     excluded:
       'Not included: committing you to anything that needs your direct sign-off — every booking is confirmed with you first.',
-    typical: '18 meetings booked · 3 conflicts resolved · 1 trip itinerary built',
+    stats: [
+      { value: '18', label: 'Meetings booked' },
+      { value: '3', label: 'Conflicts resolved' },
+      { value: '1', label: 'Trip itinerary' },
+    ],
   },
   {
     id: 'marketing-social',
+    num: '04',
     icon: IconRocket,
     title: 'Marketing & Social',
     lead: 'Posts scheduled, inbox triaged, and your audience kept warm without you opening five different tabs.',
+    bestFor: "Teams who know content matters but don't have hours for it.",
     included: [
       'Social content scheduling across platforms',
       'Inbox and DM triage',
       'Newsletter assembly and sends',
       'Basic performance tracking (opens, engagement)',
     ],
+    tools: ['Mailchimp', 'Buffer', 'Canva', 'HubSpot'],
     excluded:
       'Not included: paid ad strategy or creative direction — we can coordinate with your agency if you run one.',
-    typical: '5 posts scheduled · 2 newsletters sent · inbox triaged daily',
+    stats: [
+      { value: '5', label: 'Posts scheduled' },
+      { value: '2', label: 'Newsletters sent' },
+      { value: 'Daily', label: 'Inbox triage' },
+    ],
   },
 ]
 
@@ -127,6 +158,11 @@ const FAQS = [
     q: 'Can the scope change month to month?',
     a: 'Yes, with one billing cycle of notice, the same as changing your plan hours up or down.',
   },
+  {
+    id: 'tools',
+    q: 'What tools and platforms do you work in?',
+    a: "Whatever you already use. Each service area lists the tools we work in most often, but assistants are trained to pick up your specific stack, no migration required.",
+  },
 ]
 
 export default function ServicesPage() {
@@ -158,11 +194,16 @@ export default function ServicesPage() {
                 return (
                   <div key={s.id} id={s.id} className="iva-svc-module">
                     <div>
+                      <span className="iva-svc-module__index">{s.num}</span>
                       <span className="iva-svc-module__icon" aria-hidden="true">
                         <Icon size={24} />
                       </span>
                       <h2 className="iva-svc-module__title">{s.title}</h2>
                       <p className="iva-svc-module__lead">{s.lead}</p>
+                      <p className="iva-svc-module__best">
+                        <span>Best for</span>
+                        {s.bestFor}
+                      </p>
                       <a href="/#contact" className="iva-svc-module__link">
                         Ask about this
                         <IconArrow size={16} />
@@ -179,9 +220,25 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                       <p className="iva-svc-module__exclude">{s.excluded}</p>
-                      <div className="iva-svc-typical">
-                        <span className="iva-svc-typical__label">Typical week</span>
-                        <span className="iva-svc-typical__value">{s.typical}</span>
+
+                      <div className="iva-svc-stats">
+                        {s.stats.map((stat) => (
+                          <div key={stat.label} className="iva-svc-stats__item">
+                            <span className="iva-svc-stats__value">{stat.value}</span>
+                            <span className="iva-svc-stats__label">{stat.label}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="iva-svc-tools">
+                        <span className="iva-svc-tools__label">Works in</span>
+                        <div className="iva-svc-tools__chips">
+                          {s.tools.map((tool) => (
+                            <span key={tool} className="iva-svc-tools__chip">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
