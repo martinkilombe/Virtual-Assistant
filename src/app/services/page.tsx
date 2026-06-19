@@ -12,7 +12,6 @@ import {
   IconInvoice,
   IconCalendar,
   IconRocket,
-  IconCheck,
   IconArrow,
 } from '@/components/icons'
 
@@ -51,7 +50,7 @@ const SERVICES: ServiceModule[] = [
     ],
     tools: ['Google Workspace', 'Notion', 'Airtable', 'Slides / PowerPoint'],
     excluded:
-      'Not included: strategic or legal/financial recommendations that require a licensed advisor — your assistant will flag these and help you route them.',
+      'Not included: strategic or legal/financial recommendations that require a licensed advisor. Your assistant will flag these and help you route them.',
     stats: [
       { value: '3', label: 'Competitor briefs' },
       { value: '1', label: 'Board-ready deck' },
@@ -73,7 +72,7 @@ const SERVICES: ServiceModule[] = [
     ],
     tools: ['QuickBooks', 'Xero', 'Expensify', 'Stripe'],
     excluded:
-      'Not included: tax filing or certified accounting — we coordinate with your accountant, not replace them.',
+      'Not included: tax filing or certified accounting. We coordinate with your accountant, not replace them.',
     stats: [
       { value: '12', label: 'Invoices sent' },
       { value: '40', label: 'Receipts filed' },
@@ -95,7 +94,7 @@ const SERVICES: ServiceModule[] = [
     ],
     tools: ['Google Calendar', 'Calendly', 'Outlook', 'TripIt'],
     excluded:
-      'Not included: committing you to anything that needs your direct sign-off — every booking is confirmed with you first.',
+      'Not included: committing you to anything that needs your direct sign-off. Every booking is confirmed with you first.',
     stats: [
       { value: '18', label: 'Meetings booked' },
       { value: '3', label: 'Conflicts resolved' },
@@ -117,7 +116,7 @@ const SERVICES: ServiceModule[] = [
     ],
     tools: ['Mailchimp', 'Buffer', 'Canva', 'HubSpot'],
     excluded:
-      'Not included: paid ad strategy or creative direction — we can coordinate with your agency if you run one.',
+      'Not included: paid ad strategy or creative direction. We can coordinate with your agency if you run one.',
     stats: [
       { value: '5', label: 'Posts scheduled' },
       { value: '2', label: 'Newsletters sent' },
@@ -214,7 +213,7 @@ export default function ServicesPage() {
                       <ul className="iva-svc-ledger">
                         {s.included.map((item) => (
                           <li key={item} className="iva-svc-ledger__row">
-                            <IconCheck size={16} aria-hidden="true" />
+                            <span className="iva-svc-ledger__mark" aria-hidden="true">+</span>
                             <span>{item}</span>
                           </li>
                         ))}

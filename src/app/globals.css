@@ -1483,6 +1483,7 @@ em { font-style: italic; }
    SECTION: Services page — scope ledger modules
    ============================================================ */
 .iva-svc-hero { padding-bottom: clamp(40px, 5vw, 56px); }
+.iva-svc-hero h1 em { font-style: italic; color: var(--clay-text); font-weight: 400; }
 
 .iva-svc-modules { display: flex; flex-direction: column; }
 .iva-svc-module {
@@ -1577,7 +1578,17 @@ em { font-style: italic; }
   font-size: var(--fs-sm);
   color: var(--ink-soft);
 }
-.iva-svc-ledger__row svg { flex-shrink: 0; margin-top: 2px; color: var(--clay-text); }
+.iva-svc-ledger__mark {
+  flex-shrink: 0;
+  width: 16px;
+  margin-top: 1px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--clay-text);
+}
 
 .iva-svc-module__exclude {
   font-size: var(--fs-sm);
