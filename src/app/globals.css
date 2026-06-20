@@ -1664,10 +1664,34 @@ em { font-style: italic; }
 .iva-svc-faq__more { max-width: 760px; margin: 36px auto 0; text-align: center; }
 
 /* Solo (media-less) variant of the deep-green band — centered copy + stats only */
-.iva-band--solo .iva-band__grid { grid-template-columns: 1fr; max-width: 700px; margin-inline: auto; text-align: center; }
-.iva-band--solo .iva-band__copy h2 { max-width: none; }
-.iva-band--solo .iva-band__lead { margin-inline: auto; }
-.iva-band--solo .iva-band__stats { justify-content: center; }
+.iva-band--solo {
+  padding: clamp(72px, 9vw, 128px) 0;
+  background:
+    radial-gradient(120% 160% at 50% -20%, rgba(255, 173, 155, 0.10), transparent 60%),
+    var(--deep-green);
+}
+.iva-band--solo .iva-band__grid { grid-template-columns: 1fr; max-width: 680px; margin-inline: auto; text-align: center; }
+.iva-band--solo .iva-band__copy h2 { max-width: none; font-size: clamp(32px, 4.4vw, 60px); margin-bottom: 20px; }
+.iva-band--solo .iva-band__lead { max-width: 46ch; margin-inline: auto; margin-bottom: 40px; }
+
+.iva-band--solo .iva-band__stats { justify-content: center; flex-wrap: nowrap; gap: 0; padding-top: 32px; margin-bottom: 40px; }
+.iva-band--solo .iva-stat { flex: 1 1 0; min-width: 0; align-items: center; text-align: center; padding-inline: 20px; position: relative; }
+.iva-band--solo .iva-stat + .iva-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 560px) {
+  .iva-band--solo .iva-band__stats { flex-direction: column; flex-wrap: wrap; gap: 18px; }
+  .iva-band--solo .iva-stat { padding-inline: 0; }
+  .iva-band--solo .iva-stat + .iva-stat::before { display: none; }
+}
 
 /* ============================================================
    Reveal-on-scroll

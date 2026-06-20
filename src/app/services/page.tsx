@@ -126,8 +126,8 @@ const SERVICES: ServiceModule[] = [
 ]
 
 const STATS = [
-  { value: '4', label: 'Service areas covered' },
   { value: '1', label: 'Dedicated assistant' },
+  { value: '4', label: 'Service areas covered' },
   { value: '<24h', label: 'Avg. match time' },
 ]
 
@@ -251,7 +251,9 @@ export default function ServicesPage() {
           <section className="iva-band iva-band--solo">
             <div className="iva-container iva-band__grid">
               <div className="iva-band__copy">
-                <Eyebrow color="white">One assistant</Eyebrow>
+                <Eyebrow color="white" align="center">
+                  One assistant
+                </Eyebrow>
                 <h2 className="iva-onband">
                   Your whole back office, <em>handled</em>.
                 </h2>
