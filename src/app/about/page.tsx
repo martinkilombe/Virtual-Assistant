@@ -5,7 +5,6 @@ import RevealWrapper from '@/components/RevealWrapper'
 import Eyebrow from '@/components/ui/Eyebrow'
 import Button from '@/components/ui/Button'
 import StatCard from '@/components/ui/StatCard'
-import { IconSearch, IconCheck, IconPin, IconHeadset } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'About — Instant VA',
@@ -15,24 +14,20 @@ export const metadata: Metadata = {
 
 const STEPS = [
   {
-    icon: IconSearch,
     title: 'Sourced',
-    text: 'Pulled from a pool of career assistants, not gig marketplaces, and screened for relevant experience before they ever reach an interview.',
+    text: 'Pulled from a pool of career assistants, not gig marketplaces, and screened for relevant experience before they ever reach an interview. Most candidates don’t make it past this stage.',
   },
   {
-    icon: IconCheck,
     title: 'Verified',
-    text: 'Identity verification, reference checks, and a background check, cleared before they reach your inbox or your calendar.',
+    text: 'Identity verification, reference checks, and a background check, cleared before they reach your inbox or your calendar. We speak to at least two former employers, not just check a box.',
   },
   {
-    icon: IconPin,
     title: 'Matched',
-    text: 'Skills tested against the specific tools and tasks you need, then introduced to you only once everything holds up.',
+    text: 'Skills tested against the specific tools and tasks you need, then introduced to you only once everything holds up. If a candidate isn’t a fit for your workflow, they don’t reach your shortlist.',
   },
   {
-    icon: IconHeadset,
     title: 'Supported',
-    text: 'A dedicated success manager oversees onboarding, so quality holds steady from week one and every week after.',
+    text: 'A dedicated success manager oversees onboarding, so quality holds steady from week one and every week after. They check in regularly and step in the moment something’s off.',
   },
 ]
 
@@ -122,18 +117,12 @@ export default function AboutPage() {
               </div>
 
               <div className="iva-about-steps">
-                {STEPS.map((s) => {
-                  const Icon = s.icon
-                  return (
-                    <div key={s.title} className="iva-about-step">
-                      <span className="iva-about-step__icon" aria-hidden="true">
-                        <Icon size={22} />
-                      </span>
-                      <h3 className="iva-about-step__title">{s.title}</h3>
-                      <p className="iva-about-step__body">{s.text}</p>
-                    </div>
-                  )
-                })}
+                {STEPS.map((s) => (
+                  <div key={s.title} className="iva-about-step">
+                    <h3 className="iva-about-step__title">{s.title}</h3>
+                    <p className="iva-about-step__body">{s.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

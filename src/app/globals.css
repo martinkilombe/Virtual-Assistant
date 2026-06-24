@@ -1530,53 +1530,38 @@ em { font-style: italic; }
 }
 
 /* ============================================================
-   SECTION: About — vetting steps (icon-anchored, no numerals)
+   SECTION: About — vetting steps (word-anchored editorial rows)
    ============================================================ */
-.iva-about-steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(40px, 5vw, 56px) clamp(40px, 6vw, 72px);
-  margin-top: 8px;
-}
+.iva-about-steps { display: flex; flex-direction: column; margin-top: 8px; }
 .iva-about-step {
-  padding-top: 28px;
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) 1fr;
+  gap: 48px;
+  align-items: baseline;
+  padding: 36px 0;
   border-top: 1px solid var(--line);
   transition: padding-left var(--dur);
 }
+.iva-about-step:last-child { border-bottom: 1px solid var(--line); }
 .iva-about-step:hover { padding-left: 8px; }
-.iva-about-step__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px; height: 56px;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  color: var(--clay-text);
-  transition: border-color var(--dur), background var(--dur), color var(--dur);
-}
-.iva-about-step:hover .iva-about-step__icon { border-color: var(--clay); background: var(--clay); color: var(--paper); }
 .iva-about-step__title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(19px, 2vw, 23px);
-  color: var(--ink);
+  font-size: clamp(22px, 2.4vw, 30px);
+  color: var(--clay-text);
   line-height: var(--lh-head);
-  margin: 0 0 10px;
+  margin: 0;
 }
 .iva-about-step__body {
   color: var(--muted);
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
   margin: 0;
-  max-width: 42ch;
+  max-width: 58ch;
 }
 
 @media (max-width: 700px) {
-  .iva-about-steps { grid-template-columns: 1fr; gap: 0; }
-  .iva-about-step { padding: 28px 0; }
-  .iva-about-step:last-child { border-bottom: 1px solid var(--line); }
+  .iva-about-step { grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
 }
 
 .iva-svc-modules { display: flex; flex-direction: column; }
