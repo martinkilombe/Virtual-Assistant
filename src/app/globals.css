@@ -967,11 +967,11 @@ em { font-style: italic; }
   justify-content: center;
 }
 .iva-tst__quote {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(20px, 2.2vw, 28px);
-  line-height: 1.4;
-  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--ink-soft);
   margin: 0 0 28px;
   max-width: 36ch;
   animation: fadeUp 480ms var(--ease-out);
