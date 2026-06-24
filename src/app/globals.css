@@ -265,7 +265,7 @@ em { font-style: italic; }
 
 /* White pill — on dark surfaces */
 .iva-btn--light { background: var(--on-dark); color: var(--ink); border-color: var(--on-dark); }
-.iva-btn--light:hover { background: var(--clay-soft); border-color: var(--clay-soft); color: var(--ink); }
+.iva-btn--light:hover { background: var(--ink); border-color: var(--ink); color: var(--on-dark); }
 
 /* Outlined pill */
 .iva-btn--outline { background: transparent; color: var(--ink); border-color: var(--line); }
