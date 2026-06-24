@@ -731,9 +731,19 @@ em { font-style: italic; }
   gap: 14px;
   padding-top: 32px;
   border-top: 1px solid var(--line);
-  transition: border-color var(--dur);
+  position: relative;
 }
-.iva-proc-row:hover { border-top-color: var(--clay); }
+.iva-proc-row::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clay);
+  transform: translate(-1px, -2.5px);
+}
 .iva-proc-row__step {
   font-family: var(--font-mono);
   font-size: var(--fs-label);
