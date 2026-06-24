@@ -822,8 +822,9 @@ em { font-style: italic; }
 /* ============================================================
    SECTION: Projects — editorial cards
    ============================================================ */
+#work { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
 .iva-work__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.iva-work__more { display: flex; justify-content: center; margin-top: 60px; }
+.iva-work__more { display: flex; justify-content: center; margin-top: 40px; }
 
 .iva-project-card {
   background: var(--paper);
@@ -843,6 +844,14 @@ em { font-style: italic; }
   background: var(--paper-2);
   overflow: hidden;
 }
+.iva-project-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur) var(--ease-out);
+}
+.iva-project-card:hover .iva-project-card__img img { transform: scale(1.04); }
 .iva-project-card__body { padding: 24px; }
 .iva-project-card h3 {
   font-family: var(--font-display);
