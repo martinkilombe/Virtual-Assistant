@@ -719,28 +719,29 @@ em { font-style: italic; }
 /* ============================================================
    SECTION: Process — numbered editorial rows
    ============================================================ */
-.iva-proc__rows { display: flex; flex-direction: column; }
-.iva-proc-row {
+.iva-proc__rows {
   display: grid;
-  grid-template-columns: 100px 1fr 1.4fr;
-  gap: 48px;
-  align-items: baseline;
-  padding: 44px 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(32px, 5vw, 48px);
+}
+.iva-proc-row {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 32px;
   border-top: 1px solid var(--line);
+  transition: border-color var(--dur);
 }
-.iva-proc-row:last-child { border-bottom: 1px solid var(--line); }
+.iva-proc-row:hover { border-top-color: var(--clay); }
 .iva-proc-row__step {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(32px, 4vw, 56px);
-  color: var(--line);
-  line-height: 1;
-  transition: color var(--dur);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wide);
+  color: var(--clay-text);
 }
-.iva-proc-row:hover .iva-proc-row__step { color: var(--clay); }
 .iva-proc-row__title {
   font-family: var(--font-display);
-  font-size: clamp(17px, 1.8vw, 24px);
+  font-size: clamp(19px, 2vw, 24px);
   font-weight: 500;
   color: var(--ink);
   line-height: var(--lh-head);
@@ -751,11 +752,13 @@ em { font-style: italic; }
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
   margin: 0;
-  max-width: 50ch;
+  max-width: 38ch;
 }
 
-@media (max-width: 820px) {
-  .iva-proc-row { grid-template-columns: 1fr; gap: 10px; padding: 30px 0; }
+@media (max-width: 880px) {
+  .iva-proc__rows { grid-template-columns: 1fr; gap: 0; }
+  .iva-proc-row { padding: 28px 0; }
+  .iva-proc-row:last-child { border-bottom: 1px solid var(--line); }
 }
 
 /* ============================================================
