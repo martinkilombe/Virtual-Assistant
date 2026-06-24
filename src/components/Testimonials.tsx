@@ -45,7 +45,7 @@ export default function Testimonials() {
     <section className="iva-section iva-section--paper iva-tst" id="testimonials">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">05 · Testimonials</Eyebrow>
+          <Eyebrow align="center">04 · Testimonials</Eyebrow>
         </div>
 
         <div className="iva-tst__stage">

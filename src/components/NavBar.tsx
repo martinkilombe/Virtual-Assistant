@@ -7,7 +7,6 @@ import { smoothTo } from '@/utils/smoothTo'
 
 const NAV = [
   { label: 'Home',     href: '#top' },
-  { label: 'About',    href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Process',  href: '#process' },
   { label: 'Work',     href: '#work' },
@@ -27,7 +26,7 @@ export default function NavBar() {
   }, [])
 
   useEffect(() => {
-    const ids = ['about', 'services', 'process', 'work', 'contact']
+    const ids = ['services', 'process', 'work', 'contact']
     const onScroll = () => {
       const y = window.scrollY + 120
       let cur = 'top'

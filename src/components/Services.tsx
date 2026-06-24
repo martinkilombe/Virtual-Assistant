@@ -59,7 +59,7 @@ export default function Services() {
     <section className="iva-section iva-section--panel" id="services">
       <div className="iva-container iva-svc">
         <div className="iva-svc__copy">
-          <Eyebrow>02 · Services</Eyebrow>
+          <Eyebrow>01 · Services</Eyebrow>
           <h2 className="iva-serif">
             One assistant, an <em>entire</em> skill set.
           </h2>

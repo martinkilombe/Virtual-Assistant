@@ -3,7 +3,7 @@ import { IconFacebook, IconTwitter, IconLinkedin } from '@/components/icons'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const FOOT = [
-  { h: 'Company',  links: [{ label: 'About Us', href: '#' }, { label: 'Case Studies', href: '#' }] },
+  { h: 'Company',  links: [{ label: 'About Us', href: '/about' }, { label: 'Case Studies', href: '#' }] },
   { h: 'Services', links: [
     { label: 'Research & Reports', href: '/services#research-reports' },
     { label: 'Expensing & Invoicing', href: '/services#expensing-invoicing' },
@@ -27,8 +27,8 @@ export default function Footer() {
             Instant<span className="t">V</span><span className="o">A</span>
           </span>
           <p>
-            Helping ambitious teams stay productive with smart, reliable
-            virtual assistant support, every day.
+            Real, vetted assistants who take the recurring work off your
+            plate. Not bots. Not gig hires.
           </p>
           <div className="iva-footer__social">
             <a href="#" aria-label="Facebook"><IconFacebook size={18} /></a>
@@ -53,7 +53,6 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className="iva-footer__col">
-          <span className="iva-footer__coral-label">Delegate smarter</span>
           <h5>Stay in the loop</h5>
           <p className="iva-footer__note">
             Tips on delegating and reclaiming your week.

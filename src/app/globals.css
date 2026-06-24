@@ -1088,12 +1088,6 @@ em { font-style: italic; }
 .iva-footer__col a { color: var(--on-dark-soft); font-size: var(--fs-sm); transition: color var(--dur-fast); }
 .iva-footer__col a:hover { color: var(--on-dark); }
 .iva-footer__note { font-size: var(--fs-sm); color: var(--on-dark-soft); margin: 0 0 16px; line-height: var(--lh-relaxed); }
-.iva-footer__coral-label {
-  display: block;
-  font-family: var(--font-mono); font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide); text-transform: uppercase;
-  color: var(--clay-soft); margin-bottom: 12px;
-}
 .iva-footer__sub {
   display: flex;
   background: transparent;
@@ -1484,6 +1478,106 @@ em { font-style: italic; }
    ============================================================ */
 .iva-svc-hero { padding-bottom: clamp(40px, 5vw, 56px); }
 .iva-svc-hero h1 em { font-style: italic; color: var(--clay-text); font-weight: 400; }
+
+.iva-about-hero h1 em { font-style: italic; color: var(--clay-text); font-weight: 400; }
+
+.iva-about-pull {
+  margin: clamp(48px, 7vw, 80px) 0;
+  padding-left: clamp(20px, 3vw, 32px);
+  border-left: 2px solid var(--clay);
+  max-width: 42ch;
+}
+.iva-about-pull p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  margin: 0;
+}
+
+.iva-about-principles { margin-top: 8px; border-bottom: 1px solid var(--line); }
+.iva-about-principle {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  transition: padding-left var(--dur);
+}
+.iva-about-principle:hover { padding-left: 8px; }
+.iva-about-principle__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wide);
+  color: var(--clay-text);
+}
+.iva-about-principle__text {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-head);
+  color: var(--ink);
+  margin: 0;
+  transition: color var(--dur);
+}
+.iva-about-principle:hover .iva-about-principle__text { color: var(--clay-text); }
+
+@media (max-width: 560px) {
+  .iva-about-principle { grid-template-columns: 32px 1fr; gap: 16px; }
+}
+
+/* ============================================================
+   SECTION: About — vetting steps (icon-anchored, no numerals)
+   ============================================================ */
+.iva-about-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(40px, 5vw, 56px) clamp(40px, 6vw, 72px);
+  margin-top: 8px;
+}
+.iva-about-step {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  transition: padding-left var(--dur);
+}
+.iva-about-step:hover { padding-left: 8px; }
+.iva-about-step__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--clay-text);
+  transition: border-color var(--dur), background var(--dur), color var(--dur);
+}
+.iva-about-step:hover .iva-about-step__icon { border-color: var(--clay); background: var(--clay); color: var(--paper); }
+.iva-about-step__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(19px, 2vw, 23px);
+  color: var(--ink);
+  line-height: var(--lh-head);
+  margin: 0 0 10px;
+}
+.iva-about-step__body {
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+  max-width: 42ch;
+}
+
+@media (max-width: 700px) {
+  .iva-about-steps { grid-template-columns: 1fr; gap: 0; }
+  .iva-about-step { padding: 28px 0; }
+  .iva-about-step:last-child { border-bottom: 1px solid var(--line); }
+}
 
 .iva-svc-modules { display: flex; flex-direction: column; }
 .iva-svc-module {

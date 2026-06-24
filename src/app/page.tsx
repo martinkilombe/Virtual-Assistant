@@ -1,6 +1,5 @@
 import NavBar from '@/components/NavBar'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
 import Services from '@/components/Services'
 import Process from '@/components/Process'
 import EmployeeBand from '@/components/EmployeeBand'
@@ -16,7 +15,6 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
-        <RevealWrapper><About /></RevealWrapper>
         <RevealWrapper><Services /></RevealWrapper>
         <RevealWrapper><Process /></RevealWrapper>
         <RevealWrapper><EmployeeBand /></RevealWrapper>
