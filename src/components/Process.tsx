@@ -23,7 +23,7 @@ export default function Process() {
     <section className="iva-section iva-section--paper" id="process">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">02 · Process</Eyebrow>
+          <Eyebrow align="center">Process</Eyebrow>
           <h2 className="iva-serif">
             From hello to handled, in <em>days</em>.
           </h2>

@@ -35,7 +35,7 @@ export default function About() {
 
         {/* Copy */}
         <div className="iva-about__copy">
-          <Eyebrow>01 · About</Eyebrow>
+          <Eyebrow>About</Eyebrow>
           <h2 className="iva-serif">
             We make the running of a business feel <em>effortless</em>.
           </h2>

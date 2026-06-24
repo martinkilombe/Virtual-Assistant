@@ -25,7 +25,7 @@ export default function Projects() {
     <section className="iva-section iva-section--panel" id="work">
       <div className="iva-container">
         <div className="iva-head iva-head--center">
-          <Eyebrow align="center">03 · Case Studies</Eyebrow>
+          <Eyebrow align="center">Case Studies</Eyebrow>
           <h2 className="iva-serif">
             Quiet work, <em>loud</em> results.
           </h2>

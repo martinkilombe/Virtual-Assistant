@@ -46,7 +46,7 @@ export default function Testimonials() {
       <div className="iva-container">
         <div className="iva-tst__head">
           <div className="iva-tst__heading">
-            <Eyebrow>04 · Testimonials</Eyebrow>
+            <Eyebrow>Testimonials</Eyebrow>
             <h2 className="iva-serif">
               What founders are <em>saying</em>.
             </h2>

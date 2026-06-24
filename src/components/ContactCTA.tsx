@@ -29,7 +29,7 @@ interface ContactCTAProps {
 }
 
 export default function ContactCTA({
-  eyebrow = '06 · Contact',
+  eyebrow = 'Contact',
   title = (
     <>
       Let&apos;s take it <em>off</em> your plate.
