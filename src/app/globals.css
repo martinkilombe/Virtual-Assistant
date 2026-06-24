@@ -333,7 +333,7 @@ em { font-style: italic; }
 .iva-stat { display: flex; flex-direction: column; gap: 6px; }
 .iva-stat__value {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(32px, 4vw, 52px);
   color: var(--on-dark);
   line-height: 1;
@@ -782,6 +782,8 @@ em { font-style: italic; }
   background: var(--deep-green);
   overflow: hidden;
   padding: clamp(84px, 11vw, 160px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .iva-band__grid {
   position: relative;
@@ -791,13 +793,54 @@ em { font-style: italic; }
   gap: clamp(48px, 7vw, 96px);
   align-items: center;
 }
-.iva-band__media { position: relative; }
+.iva-band__media {
+  position: relative;
+  border-radius: var(--r-lg);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+}
 .iva-band__photo {
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: rgba(255, 255, 255, 0.06);
+  object-fit: cover;
+  object-position: top center;
   border-radius: var(--r-lg);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.iva-band__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  background: var(--deep-green);
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.iva-band__caption {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--on-dark);
+}
+.iva-band__caption-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clay-soft);
+  flex-shrink: 0;
 }
 .iva-band__copy h2 {
   font-family: var(--font-display);

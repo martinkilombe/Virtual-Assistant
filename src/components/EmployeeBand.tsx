@@ -12,9 +12,17 @@ export default function EmployeeBand() {
   return (
     <section className="iva-band">
       <div className="iva-container iva-band__grid">
-        {/* Image placeholder — drop a real image in here later */}
         <div className="iva-band__media">
-          <div className="iva-band__photo" aria-hidden="true" />
+          <img
+            src="/assets/img/people-band.jpg"
+            alt="A virtual assistant wearing a headset, working from her laptop and phone"
+            className="iva-band__photo"
+            loading="lazy"
+          />
+          <div className="iva-band__caption">
+            <span className="iva-band__caption-dot" aria-hidden="true" />
+            Vetted, full-time professional
+          </div>
         </div>
 
         <div className="iva-band__copy">
