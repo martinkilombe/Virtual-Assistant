@@ -719,6 +719,7 @@ em { font-style: italic; }
 /* ============================================================
    SECTION: Process — numbered editorial rows
    ============================================================ */
+#process { padding-top: clamp(48px, 6vw, 96px); }
 .iva-proc__rows {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -746,6 +747,7 @@ em { font-style: italic; }
   color: var(--ink);
   line-height: var(--lh-head);
   margin: 0;
+  min-height: 2.2em;
 }
 .iva-proc-row__body {
   color: var(--muted);
@@ -759,6 +761,7 @@ em { font-style: italic; }
   .iva-proc__rows { grid-template-columns: 1fr; gap: 0; }
   .iva-proc-row { padding: 28px 0; }
   .iva-proc-row:last-child { border-bottom: 1px solid var(--line); }
+  .iva-proc-row__title { min-height: 0; }
 }
 
 /* ============================================================
@@ -868,31 +871,51 @@ em { font-style: italic; }
 }
 
 /* ============================================================
-   SECTION: Testimonials — centered pull quote
+   SECTION: Testimonials — quote card + photo panel
+   (Cohere-pattern two-pane shell, see DESIGN-cohere .md)
    ============================================================ */
-.iva-tst__stage { max-width: 900px; margin: 0 auto; text-align: center; position: relative; }
-.iva-tst__glyph {
+.iva-tst__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.iva-tst__heading h2 {
   font-family: var(--font-display);
-  font-size: clamp(100px, 16vw, 200px);
-  line-height: 0.72;
-  color: var(--line);
-  user-select: none;
-  pointer-events: none;
-  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-head);
+  font-weight: 500;
+  margin: 0;
+}
+.iva-tst__heading h2 em { font-style: italic; color: var(--clay-text); font-weight: 400; }
+.iva-tst__arrows { display: flex; gap: 12px; flex-shrink: 0; }
+
+.iva-tst__panel {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.iva-tst__textpane {
+  padding: clamp(40px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .iva-tst__quote {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: var(--fs-quote);
-  line-height: 1.38;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.4;
   color: var(--ink);
-  margin: 8px auto 32px;
-  max-width: 26ch;
-  letter-spacing: var(--ls-head);
+  margin: 0 0 28px;
+  max-width: 36ch;
   animation: fadeUp 480ms var(--ease-out);
 }
 .iva-tst__quote em { font-style: italic; color: var(--clay-text); }
-.iva-tst__author { display: flex; flex-direction: column; gap: 4px; margin-bottom: 36px; }
+.iva-tst__author { display: flex; flex-direction: column; gap: 4px; }
 .iva-tst__name { font-family: var(--font-body); font-weight: 600; color: var(--ink); font-size: var(--fs-sm); }
 .iva-tst__role {
   font-family: var(--font-mono);
@@ -901,14 +924,22 @@ em { font-style: italic; }
   text-transform: uppercase;
   color: var(--muted);
 }
-.iva-tst__nav { display: flex; align-items: center; justify-content: center; gap: 24px; }
-.iva-tst__dots { display: flex; gap: 10px; }
+.iva-tst__photopane { background: var(--paper-2); border-left: 1px solid var(--line); }
+
+.iva-tst__dots { display: flex; gap: 8px; margin-top: 32px; }
 .iva-tst__dot {
-  width: 6px; height: 6px; border-radius: 50%;
+  flex: 1; max-width: 64px; height: 3px;
   border: none; background: var(--line); cursor: pointer; padding: 0;
-  transition: all var(--dur) var(--ease-out);
+  border-radius: var(--r-full);
+  transition: background var(--dur) var(--ease-out);
 }
-.iva-tst__dot.on { background: var(--clay); width: 24px; border-radius: var(--r-full); }
+.iva-tst__dot.on { background: var(--clay); }
+
+@media (max-width: 880px) {
+  .iva-tst__head { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .iva-tst__panel { grid-template-columns: 1fr; }
+  .iva-tst__photopane { border-left: none; border-top: 1px solid var(--line); min-height: 220px; }
+}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }

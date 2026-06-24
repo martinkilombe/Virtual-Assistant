@@ -44,39 +44,47 @@ export default function Testimonials() {
   return (
     <section className="iva-section iva-section--paper iva-tst" id="testimonials">
       <div className="iva-container">
-        <div className="iva-head iva-head--center">
-          <Eyebrow align="center">04 · Testimonials</Eyebrow>
-        </div>
-
-        <div className="iva-tst__stage">
-          <span className="iva-tst__glyph" aria-hidden="true">&ldquo;</span>
-          <p className="iva-tst__quote" key={i}>
-            {q.text}
-          </p>
-          <div className="iva-tst__author">
-            <span className="iva-tst__name">{q.name}</span>
-            <span className="iva-tst__role">{q.role}</span>
+        <div className="iva-tst__head">
+          <div className="iva-tst__heading">
+            <Eyebrow>04 · Testimonials</Eyebrow>
+            <h2 className="iva-serif">
+              What founders are <em>saying</em>.
+            </h2>
           </div>
-          <div className="iva-tst__nav">
+          <div className="iva-tst__arrows">
             <IconButton variant="dark" size="md" label="Previous" onClick={() => go(-1)}>
               <IconArrowL size={20} />
             </IconButton>
-            <div className="iva-tst__dots" role="tablist">
-              {QUOTES.map((_, k) => (
-                <button
-                  key={k}
-                  role="tab"
-                  aria-selected={k === i}
-                  aria-label={`Go to testimonial ${k + 1}`}
-                  className={`iva-tst__dot${k === i ? ' on' : ''}`}
-                  onClick={() => setI(k)}
-                />
-              ))}
-            </div>
             <IconButton variant="dark" size="md" label="Next" onClick={() => go(1)}>
               <IconArrow size={20} />
             </IconButton>
           </div>
+        </div>
+
+        <div className="iva-tst__panel">
+          <div className="iva-tst__textpane">
+            <p className="iva-tst__quote" key={i}>
+              &ldquo;{q.text}&rdquo;
+            </p>
+            <div className="iva-tst__author">
+              <span className="iva-tst__name">— {q.name}</span>
+              <span className="iva-tst__role">{q.role}</span>
+            </div>
+          </div>
+          <div className="iva-tst__photopane" aria-hidden="true" />
+        </div>
+
+        <div className="iva-tst__dots" role="tablist">
+          {QUOTES.map((_, k) => (
+            <button
+              key={k}
+              role="tab"
+              aria-selected={k === i}
+              aria-label={`Go to testimonial ${k + 1}`}
+              className={`iva-tst__dot${k === i ? ' on' : ''}`}
+              onClick={() => setI(k)}
+            />
+          ))}
         </div>
       </div>
     </section>
