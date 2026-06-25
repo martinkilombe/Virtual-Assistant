@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Eyebrow from '@/components/ui/Eyebrow'
 import CaseStudyCard from '@/components/ui/CaseStudyCard'
-import ContactCTA from '@/components/ContactCTA'
 import RevealWrapper from '@/components/RevealWrapper'
 import { IconArrowL } from '@/components/icons'
 import { CASE_STUDIES } from '@/data/case-studies'
@@ -151,14 +150,6 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ sl
         </section>
       </RevealWrapper>
 
-      {/* ── CTA ── */}
-      <RevealWrapper>
-        <ContactCTA
-          eyebrow="Work with us"
-          title={<>Your work, <em>handled.</em></>}
-          description="Tell us what's taking up your week. We'll match you with the right assistant, usually within a day."
-        />
-      </RevealWrapper>
     </>
   )
 }

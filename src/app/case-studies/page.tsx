@@ -3,9 +3,8 @@
 import { useState } from 'react'
 import Eyebrow from '@/components/ui/Eyebrow'
 import CaseStudyCard from '@/components/ui/CaseStudyCard'
-import ContactCTA from '@/components/ContactCTA'
-import RevealWrapper from '@/components/RevealWrapper'
 import { CASE_STUDIES } from '@/data/case-studies'
+
 
 const CATEGORIES = ['All', 'Project Management', 'Marketing & Social', 'Operations & Finance']
 
@@ -70,10 +69,6 @@ export default function CaseStudiesIndex() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <RevealWrapper>
-        <ContactCTA />
-      </RevealWrapper>
     </>
   )
 }
