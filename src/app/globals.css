@@ -881,9 +881,9 @@ em { font-style: italic; }
 /* ============================================================
    SECTION: Projects — editorial cards
    ============================================================ */
-#work { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
+#work { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(40px, 5vw, 64px); }
 .iva-work__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.iva-work__more { display: flex; justify-content: center; margin-top: 40px; }
+.iva-work__more { display: flex; justify-content: center; margin-top: 28px; }
 
 .iva-project-card {
   background: var(--paper);
@@ -942,6 +942,7 @@ em { font-style: italic; }
    SECTION: Testimonials — quote card + photo panel
    (Cohere-pattern two-pane shell, see DESIGN-cohere .md)
    ============================================================ */
+#testimonials { padding-top: clamp(48px, 6vw, 96px); padding-bottom: clamp(48px, 6vw, 96px); }
 .iva-tst__head {
   display: flex;
   align-items: flex-end;
@@ -1017,6 +1018,7 @@ em { font-style: italic; }
 /* ============================================================
    SECTION: Contact CTA
    ============================================================ */
+#contact { padding-top: clamp(48px, 6vw, 96px); }
 .iva-cta { background: var(--paper-2); }
 .iva-cta__grid {
   display: grid;
