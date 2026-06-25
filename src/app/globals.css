@@ -2202,7 +2202,6 @@ em { font-style: italic; }
   aspect-ratio: 4 / 3;
   background: var(--paper-2);
   overflow: hidden;
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
 }
 
 .iva-cs-card__img img {
@@ -2302,7 +2301,8 @@ em { font-style: italic; }
 
 /* ── Detail: breadcrumb ────────────────────────────────── */
 .iva-cs-breadcrumb {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
@@ -2320,7 +2320,8 @@ em { font-style: italic; }
 
 /* ── Detail: category chip ─────────────────────────────── */
 .iva-cs-cat-chip {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
@@ -2355,6 +2356,7 @@ em { font-style: italic; }
 }
 
 .iva-cs-metrics__item:first-child { padding-left: 0; }
+.iva-cs-metrics__item:last-child { padding-right: 0; }
 
 .iva-cs-metrics__item + .iva-cs-metrics__item::before {
   content: "";
@@ -2518,6 +2520,7 @@ em { font-style: italic; }
 }
 
 .iva-cs-results__stat:first-child { padding-left: 0; }
+.iva-cs-results__stat:last-child { padding-right: 0; }
 
 .iva-cs-results__stat + .iva-cs-results__stat::before {
   content: "";
