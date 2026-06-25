@@ -35,6 +35,11 @@ export default function Footer() {
             <a href="#" aria-label="Twitter"><IconTwitter size={18} /></a>
             <a href="#" aria-label="LinkedIn"><IconLinkedin size={18} /></a>
           </div>
+
+          <div className="iva-footer__contact">
+            <a href="tel:+10000000000">+1 (000) 000-0000</a>
+            <a href="mailto:hello@instantva.co">hello@instantva.co</a>
+          </div>
         </div>
 
         {/* Link columns */}
