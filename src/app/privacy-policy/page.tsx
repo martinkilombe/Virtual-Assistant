@@ -6,7 +6,7 @@ import PrivacyIndex from '@/components/PrivacyIndex'
 import { IconArrowL } from '@/components/icons'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Instant VA',
+  title: 'Privacy Policy | Instant VA',
   description:
     'How Instant VA collects, uses, and protects your personal data across our website and virtual assistant services.',
 }
@@ -61,7 +61,7 @@ const SECTIONS = [
         <li>To process payments, send invoices, and maintain account records.</li>
         <li>To respond to enquiries, provide support, and send service-related notices.</li>
         <li>
-          To send product updates or delegation tips, only if you have opted in — you can
+          To send product updates or delegation tips, only if you have opted in; you can
           unsubscribe at any time.
         </li>
         <li>To monitor, secure, and improve the site and our internal tools.</li>
@@ -98,7 +98,7 @@ const SECTIONS = [
           </li>
           <li>Authorities or advisors, where required by law or to protect our legal rights.</li>
           <li>
-            A successor entity, in the event of a merger, acquisition, or asset sale — with notice
+            A successor entity, in the event of a merger, acquisition, or asset sale, with notice
             to you beforehand.
           </li>
         </ul>

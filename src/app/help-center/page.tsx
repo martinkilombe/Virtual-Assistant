@@ -7,7 +7,7 @@ import HelpCenter, { type HelpCategory } from '@/components/HelpCenter'
 import { IconArrowL } from '@/components/icons'
 
 export const metadata: Metadata = {
-  title: 'Help Center — Instant VA',
+  title: 'Help Center | Instant VA',
   description:
     'Answers to common questions about getting started, working with your assistant, billing, security, and cancellations.',
 }

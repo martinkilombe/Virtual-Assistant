@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 import StatCard from '@/components/ui/StatCard'
 
 export const metadata: Metadata = {
-  title: 'About — Instant VA',
+  title: 'About | Instant VA',
   description:
     'Why Instant VA exists, how we vet and match assistants, and the principles we hold to as we help founders hand off the busywork.',
 }

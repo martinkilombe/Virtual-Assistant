@@ -16,7 +16,7 @@ import {
 } from '@/components/icons'
 
 export const metadata: Metadata = {
-  title: 'Services — Instant VA',
+  title: 'Services | Instant VA',
   description:
     'What your Instant VA actually handles: research and reporting, expensing and invoicing, scheduling and planning, and marketing and social, scoped clearly so you know what to hand off.',
 }

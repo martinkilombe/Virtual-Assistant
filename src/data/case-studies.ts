@@ -34,13 +34,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       'A 12-person boutique creative agency was drowning in status emails and deadline slippage. We placed a dedicated VA who owned the entire project coordination layer so their PMs could focus on the work.',
     client:
-      'A boutique creative studio with twelve full-time staff and a roster of 40+ concurrent client engagements — ranging from brand identities to campaign rollouts. The founders were creatives first, operators second, and it showed.',
+      'A boutique creative studio with twelve full-time staff and a roster of 40+ concurrent client engagements, ranging from brand identities to campaign rollouts. The founders were creatives first, operators second, and it showed.',
     challenge:
-      'Project status lived in scattered email threads and underpowered spreadsheets. PMs spent the majority of their week chasing deliverables, writing status updates, and following up on approvals — leaving almost no time for the creative direction they were hired to provide. Deadlines were slipping. Clients were noticing.',
+      'Project status lived in scattered email threads and underpowered spreadsheets. PMs spent the majority of their week chasing deliverables, writing status updates, and following up on approvals, leaving almost no time for the creative direction they were hired to provide. Deadlines were slipping. Clients were noticing.',
     workstreams: [
       {
         title: 'Project Tracking',
-        body: 'Set up and maintained a centralised tracking system across all 40 active projects — statuses, owners, deadlines, and blockers updated daily. PMs finally had a single source of truth.',
+        body: 'Set up and maintained a centralised tracking system across all 40 active projects: statuses, owners, deadlines, and blockers updated daily. PMs finally had a single source of truth.',
       },
       {
         title: 'Client Communication',
@@ -57,14 +57,14 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: '8 hrs', label: 'Reclaimed per PM, per week' },
     ],
     resultsSummary:
-      'The agency went six consecutive months without a single missed client deadline — a first in their four-year history. Each PM reclaimed roughly eight hours per week, which they reinvested into creative direction and client relationships rather than inbox management.',
+      'The agency went six consecutive months without a single missed client deadline, a first in their four-year history. Each PM reclaimed roughly eight hours per week, which they reinvested into creative direction and client relationships rather than inbox management.',
     quote: {
       text: 'We stopped losing sleep over what might be slipping through the cracks. Our VA just handles it, and now we can actually focus on the work we love.',
       attribution: 'Creative Director, Boutique Studio',
     },
     image: '/assets/img/work/project-management.jpg',
     excerpt:
-      'We kept a 12-person agency on schedule across 40 live client projects — six months, zero missed deadlines.',
+      'We kept a 12-person agency on schedule across 40 live client projects: six months, zero missed deadlines.',
     keyMetric: '0 missed deadlines',
   },
   {
@@ -75,9 +75,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       'A solo founder building a personal brand alongside a product business was spending 2+ hours daily on social tasks. We took over the content calendar, inbox, and publishing rhythm so they could show up online without being consumed by it.',
     client:
-      'A solo founder running a SaaS product and an audience-led content business simultaneously. They had strong ideas, a growing following, and a genuine point of view — but no system for turning any of it into consistent output.',
+      'A solo founder running a SaaS product and an audience-led content business simultaneously. They had strong ideas, a growing following, and a genuine point of view, but no system for turning any of it into consistent output.',
     challenge:
-      'The posting schedule was erratic: sometimes brilliant, often absent. A growing partnership inbox was going unanswered for days. Long-form content the founder spent hours writing was published once and abandoned. They were spending two hours daily on tasks that produced inconsistent results — and burning out on the very audience they were trying to build.',
+      'The posting schedule was erratic: sometimes brilliant, often absent. A growing partnership inbox was going unanswered for days. Long-form content the founder spent hours writing was published once and abandoned. They were spending two hours daily on tasks that produced inconsistent results, and burning out on the very audience they were trying to build.',
     workstreams: [
       {
         title: 'Content Calendar',
@@ -114,11 +114,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: 'SaaS / Tech',
     heroHeadline: 'Recovered 80 engineering hours a month from admin work.',
     summary:
-      'A six-person SaaS team was paying engineers to do invoicing, expense reporting, and CRM hygiene. We absorbed all of it — and raised their CRM data quality from 34% to 91% complete in the process.',
+      'A six-person SaaS team was paying engineers to do invoicing, expense reporting, and CRM hygiene. We absorbed all of it and raised their CRM data quality from 34% to 91% complete in the process.',
     client:
       'An early-stage SaaS startup with six full-time employees, all technical. They had strong product instincts and a growing customer base, but no dedicated operations function. Admin tasks were being squeezed in between sprint work at an enormous opportunity cost.',
     challenge:
-      'Finance operations — invoicing cycles, expense categorisation, vendor follow-ups — were being handled by engineers and co-founders at an effective rate of $150+ per hour. The CRM was a graveyard: contact records were stale, deal stages were wrong, and onboarding notes were missing for nearly two-thirds of customers. Nobody had bandwidth to fix it.',
+      'Finance operations (invoicing cycles, expense categorisation, vendor follow-ups) were being handled by engineers and co-founders at an effective rate of $150+ per hour. The CRM was a graveyard: contact records were stale, deal stages were wrong, and onboarding notes were missing for nearly two-thirds of customers. Nobody had bandwidth to fix it.',
     workstreams: [
       {
         title: 'Invoicing & Finance Ops',
@@ -146,7 +146,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     image: '/assets/img/work/operations-support.jpg',
     excerpt:
-      'Invoicing, CRM hygiene, and ops admin handled end-to-end — freeing engineers to build, not file expenses.',
+      'Invoicing, CRM hygiene, and ops admin handled end-to-end, freeing engineers to build, not file expenses.',
     keyMetric: '80 hrs/month recovered',
   },
 ]
