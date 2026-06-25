@@ -50,10 +50,16 @@ function validateField(key: keyof FormErrors, value: string): string | undefined
   }
 }
 
+interface TrustItem {
+  num: string
+  text: string
+}
+
 interface ContactCTAProps {
   eyebrow?: string
   title?: React.ReactNode
   description?: string
+  trustItems?: TrustItem[]
 }
 
 export default function ContactCTA({
@@ -64,6 +70,7 @@ export default function ContactCTA({
     </>
   ),
   description = "Tell us what's eating your week. We'll match you with the right assistant, usually within a day.",
+  trustItems,
 }: ContactCTAProps) {
   const [v, setV] = useState<FormValues>(EMPTY)
   const [err, setErr] = useState<FormErrors>({})
@@ -104,6 +111,17 @@ export default function ContactCTA({
             <Eyebrow color="white">{eyebrow}</Eyebrow>
             <h2 className="iva-onaccent">{title}</h2>
             <p>{description}</p>
+
+            {trustItems && trustItems.length > 0 && (
+              <div className="iva-cta__trust">
+                {trustItems.map((item) => (
+                  <div key={item.num} className="iva-cta__trust-item">
+                    <span className="iva-cta__trust-num">{item.num}</span>
+                    <p className="iva-cta__trust-text">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Form */}
