@@ -11,7 +11,7 @@ const FOOT = [
     { label: 'Marketing', href: '/services#marketing-social' },
   ] },
   { h: 'Support',  links: [
-    { label: 'Contact', href: '#' },
+    { label: 'Contact', href: '/contact' },
     { label: 'Help Center', href: '/help-center' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
   ] },
