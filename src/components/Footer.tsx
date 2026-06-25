@@ -3,7 +3,7 @@ import { IconFacebook, IconTwitter, IconLinkedin } from '@/components/icons'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const FOOT = [
-  { h: 'Company',  links: [{ label: 'About Us', href: '/about' }, { label: 'Case Studies', href: '#' }] },
+  { h: 'Company',  links: [{ label: 'About Us', href: '/about' }, { label: 'Case Studies', href: '/case-studies' }] },
   { h: 'Services', links: [
     { label: 'Research & Reports', href: '/services#research-reports' },
     { label: 'Expensing & Invoicing', href: '/services#expensing-invoicing' },

@@ -4,17 +4,23 @@ import ProjectCard from '@/components/ui/ProjectCard'
 
 const PROJECTS = [
   {
+    slug: 'project-management',
     title: 'Project Management',
+    category: 'Creative Agency',
     image: '/assets/img/work/project-management.jpg',
     text: 'We kept a 12-person agency on schedule across 40 live client projects.',
   },
   {
+    slug: 'media-marketing',
     title: 'Media & Marketing',
+    category: 'Creator / Founder',
     image: '/assets/img/work/media-marketing.jpg',
-    text: 'A daily social calendar and inbox triage that tripled a founder’s reach.',
+    text: "A daily social calendar and inbox triage that tripled a founder's reach.",
   },
   {
+    slug: 'operations-support',
     title: 'Operations Support',
+    category: 'SaaS / Tech',
     image: '/assets/img/work/operations-support.jpg',
     text: 'Invoicing, scheduling, and CRM hygiene handled end-to-end for a SaaS team.',
   },
@@ -37,15 +43,21 @@ export default function Projects() {
 
         <div className="iva-work__grid">
           {PROJECTS.map((p) => (
-            <ProjectCard key={p.title} title={p.title} image={p.image}>
+            <ProjectCard
+              key={p.title}
+              title={p.title}
+              image={p.image}
+              category={p.category}
+              href={`/case-studies/${p.slug}`}
+            >
               {p.text}
             </ProjectCard>
           ))}
         </div>
 
         <div className="iva-work__more">
-          <Button href="#work" variant="outline" size="md">
-            View All
+          <Button href="/case-studies" variant="outline" size="md">
+            View All Case Studies
           </Button>
         </div>
       </div>
