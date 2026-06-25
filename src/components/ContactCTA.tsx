@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import isEmail from 'validator/lib/isEmail'
+import { isValidPhoneNumber } from 'libphonenumber-js/min'
 import Button from '@/components/ui/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import Field from '@/components/ui/Field'
@@ -17,10 +19,36 @@ interface FormValues {
 interface FormErrors {
   name?: string
   email?: string
+  phone?: string
+  subject?: string
   message?: string
 }
 
 const EMPTY: FormValues = { name: '', email: '', phone: '', subject: '', message: '' }
+
+const TOPICS = [
+  'Research & Reports',
+  'Expensing & Invoicing',
+  'Scheduling & Planning',
+  'Marketing & Social',
+  'Something else',
+]
+
+function validateField(key: keyof FormErrors, value: string): string | undefined {
+  switch (key) {
+    case 'name':
+      return value.trim() ? undefined : 'Please enter your name'
+    case 'email':
+      return isEmail(value) ? undefined : 'Enter a valid email'
+    case 'phone':
+      if (!value.trim()) return undefined
+      return isValidPhoneNumber(value, 'US') ? undefined : 'Enter a valid phone number'
+    case 'subject':
+      return value.trim() ? undefined : "Let us know what this is about"
+    case 'message':
+      return value.trim() ? undefined : 'Tell us how we can help'
+  }
+}
 
 interface ContactCTAProps {
   eyebrow?: string
@@ -43,19 +71,28 @@ export default function ContactCTA({
 
   const set =
     (key: keyof FormValues) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
       setV((s) => ({ ...s, [key]: e.target.value }))
       setErr((s) => ({ ...s, [key]: undefined }))
     }
 
+  const blur =
+    (key: keyof FormErrors) =>
+    (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setErr((s) => ({ ...s, [key]: validateField(key, e.target.value) }))
+    }
+
   const submit = (e: React.FormEvent) => {
     e.preventDefault()
-    const next: FormErrors = {}
-    if (!v.name.trim()) next.name = 'Please enter your name'
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.email)) next.email = 'Enter a valid email'
-    if (!v.message.trim()) next.message = 'Tell us how we can help'
+    const next: FormErrors = {
+      name: validateField('name', v.name),
+      email: validateField('email', v.email),
+      phone: validateField('phone', v.phone),
+      subject: validateField('subject', v.subject),
+      message: validateField('message', v.message),
+    }
     setErr(next)
-    if (Object.keys(next).length === 0) setSent(true)
+    if (Object.values(next).every((msg) => !msg)) setSent(true)
   }
 
   return (
@@ -97,44 +134,63 @@ export default function ContactCTA({
                 <div className="iva-cta__row">
                   <Field
                     label="Name"
-                    placeholder="Jane Doe"
+                    required
+                    autoComplete="name"
                     value={v.name}
                     onChange={set('name')}
+                    onBlur={blur('name')}
                     invalid={!!err.name}
                     hint={err.name}
                   />
                   <Field
                     type="email"
                     label="Email"
-                    placeholder="you@email.com"
+                    required
+                    autoComplete="email"
                     value={v.email}
                     onChange={set('email')}
+                    onBlur={blur('email')}
                     invalid={!!err.email}
                     hint={err.email}
                   />
                 </div>
                 <div className="iva-cta__row">
                   <Field
+                    type="tel"
                     label="Phone"
                     optional
-                    placeholder="(000) 000-0000"
+                    autoComplete="tel"
                     value={v.phone}
                     onChange={set('phone')}
+                    onBlur={blur('phone')}
+                    invalid={!!err.phone}
+                    hint={err.phone}
                   />
                   <Field
-                    label="What's this about?"
-                    optional
-                    placeholder="e.g. inbox management"
+                    as="select"
+                    label="Topic"
+                    required
                     value={v.subject}
                     onChange={set('subject')}
-                  />
+                    onBlur={blur('subject')}
+                    invalid={!!err.subject}
+                    hint={err.subject}
+                  >
+                    <option value="" disabled hidden />
+                    {TOPICS.map((topic) => (
+                      <option key={topic} value={topic}>
+                        {topic}
+                      </option>
+                    ))}
+                  </Field>
                 </div>
                 <Field
                   as="textarea"
                   label="Message"
-                  placeholder="Tell us what's eating your week"
+                  required
                   value={v.message}
                   onChange={set('message')}
+                  onBlur={blur('message')}
                   invalid={!!err.message}
                   hint={err.message}
                 />

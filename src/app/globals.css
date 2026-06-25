@@ -352,33 +352,65 @@ em { font-style: italic; }
    ============================================================ */
 .iva-field { display: flex; flex-direction: column; gap: 6px; }
 .iva-field + .iva-field { margin-top: 18px; }
-.iva-field__label {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--ink-soft);
-}
+.iva-field__control { position: relative; }
 .iva-field__optional { color: var(--muted); font-weight: 400; }
+.iva-field__required { color: var(--clay-text); }
 .iva-field__input,
-.iva-field__textarea {
+.iva-field__textarea,
+.iva-field__select {
   font-family: var(--font-body);
-  font-size: var(--fs-body);
+  font-size: var(--fs-sm);
   color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--r-sm);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
   outline: none;
   width: 100%;
   transition: border-color var(--dur);
 }
-.iva-field__input { padding: 13px 14px; }
-.iva-field__textarea { padding: 13px 14px; resize: vertical; min-height: 110px; }
+.iva-field__input { padding: 20px 0 10px; }
+.iva-field__textarea { padding: 20px 0 10px; resize: none; min-height: 110px; }
+.iva-field__select { padding: 20px 24px 10px 0; appearance: none; cursor: pointer; }
 .iva-field__input:focus,
-.iva-field__textarea:focus { border-color: var(--clay); }
-.iva-field__input::placeholder,
-.iva-field__textarea::placeholder { color: var(--muted); }
+.iva-field__textarea:focus,
+.iva-field__select:focus { border-color: var(--clay); }
 .iva-field--invalid .iva-field__input,
-.iva-field--invalid .iva-field__textarea { border-color: var(--error); }
+.iva-field--invalid .iva-field__textarea,
+.iva-field--invalid .iva-field__select { border-color: var(--error); }
 .iva-field__hint { font-size: var(--fs-micro); color: var(--error); }
+.iva-field__selecticon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* Floating label: rests as a placeholder, lifts above the underline on focus/value */
+.iva-field__label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--muted);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: top var(--dur), font-size var(--dur), color var(--dur);
+}
+.iva-field__textarea ~ .iva-field__label { top: 30px; transform: none; }
+.iva-field__label--float,
+.iva-field__textarea ~ .iva-field__label--float {
+  top: 0;
+  transform: none;
+  font-size: var(--fs-micro);
+  color: var(--muted);
+}
+.iva-field--invalid .iva-field__label { color: var(--error); }
 
 /* ============================================================
    SECTION: Navigation
@@ -1077,6 +1109,19 @@ em { font-style: italic; }
   width: 68px; height: 68px; border-radius: 50%;
   background: transparent; border: 1px solid var(--clay); color: var(--clay);
   margin-bottom: 20px;
+  animation: thankPop var(--dur-slow) var(--ease-out) both;
+}
+.iva-cta__thankicon .iva-check__path {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: checkDraw var(--dur-slow) var(--ease-out) 180ms both;
+}
+@keyframes thankPop {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes checkDraw {
+  to { stroke-dashoffset: 0; }
 }
 .iva-cta__thanks h3 { font-family: var(--font-display); font-size: var(--fs-h3); margin: 0 0 10px; }
 .iva-cta__thanks p { color: var(--muted); max-width: 38ch; margin: 0 auto 24px; }
@@ -1084,6 +1129,8 @@ em { font-style: italic; }
 @media (max-width: 820px) {
   .iva-cta__grid { grid-template-columns: 1fr; }
   .iva-cta__row { grid-template-columns: 1fr; }
+  .iva-cta__form { order: 1; }
+  .iva-cta__panel { order: 2; }
 }
 
 /* ============================================================

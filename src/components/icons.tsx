@@ -141,10 +141,18 @@ export function IconArrowL(p: IconProps) {
   )
 }
 
+export function IconChevronDown(p: IconProps) {
+  return (
+    <SVGIcon {...p}>
+      <path d="M6 9l6 6 6-6" />
+    </SVGIcon>
+  )
+}
+
 export function IconCheck(p: IconProps) {
   return (
     <SVGIcon {...p}>
-      <path d="M5 12.5l4.5 4.5L19 7" />
+      <path className="iva-check__path" pathLength={1} d="M5 12.5l4.5 4.5L19 7" />
     </SVGIcon>
   )
 }
