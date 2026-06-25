@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Button from '@/components/ui/Button'
 import Eyebrow from '@/components/ui/Eyebrow'
 import Field from '@/components/ui/Field'
-import { IconHeadset, IconCheck } from '@/components/icons'
+import { IconCheck } from '@/components/icons'
 
 interface FormValues {
   name: string
@@ -66,20 +66,6 @@ export default function ContactCTA({
           <Eyebrow color="white">{eyebrow}</Eyebrow>
           <h2 className="iva-onaccent">{title}</h2>
           <p>{description}</p>
-          <Button href="#contact" variant="light" size="lg">
-            Book a free call
-          </Button>
-          <div className="iva-cta__call">
-            <span className="iva-cta__callicon">
-              <IconHeadset size={26} />
-            </span>
-            <div>
-              <span className="iva-cta__calllab">Call us today</span>
-              <a href="tel:0008596256" className="iva-cta__callnum">
-                (000) 859-6256
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Form */}
@@ -109,7 +95,8 @@ export default function ContactCTA({
             <>
               <div className="iva-cta__row">
                 <Field
-                  placeholder="Name"
+                  label="Name"
+                  placeholder="Jane Doe"
                   value={v.name}
                   onChange={set('name')}
                   invalid={!!err.name}
@@ -117,7 +104,8 @@ export default function ContactCTA({
                 />
                 <Field
                   type="email"
-                  placeholder="Email"
+                  label="Email"
+                  placeholder="you@email.com"
                   value={v.email}
                   onChange={set('email')}
                   invalid={!!err.email}
@@ -126,19 +114,24 @@ export default function ContactCTA({
               </div>
               <div className="iva-cta__row">
                 <Field
-                  placeholder="Phone"
+                  label="Phone"
+                  optional
+                  placeholder="(000) 000-0000"
                   value={v.phone}
                   onChange={set('phone')}
                 />
                 <Field
-                  placeholder="Subject"
+                  label="What's this about?"
+                  optional
+                  placeholder="e.g. inbox management"
                   value={v.subject}
                   onChange={set('subject')}
                 />
               </div>
               <Field
                 as="textarea"
-                placeholder="Message"
+                label="Message"
+                placeholder="Tell us what's eating your week"
                 value={v.message}
                 onChange={set('message')}
                 invalid={!!err.message}
@@ -150,8 +143,11 @@ export default function ContactCTA({
                 type="submit"
                 className="iva-cta__submit"
               >
-                Submit Now
+                Send message
               </Button>
+              <p className="iva-cta__formnote">
+                We&apos;ll keep your details private and only use them to get back to you.
+              </p>
             </>
           )}
         </form>

@@ -352,20 +352,26 @@ em { font-style: italic; }
    ============================================================ */
 .iva-field { display: flex; flex-direction: column; gap: 6px; }
 .iva-field + .iva-field { margin-top: 18px; }
+.iva-field__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.iva-field__optional { color: var(--muted); font-weight: 400; }
 .iva-field__input,
 .iva-field__textarea {
   font-family: var(--font-body);
   font-size: var(--fs-body);
   color: var(--ink);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
   outline: none;
   width: 100%;
   transition: border-color var(--dur);
 }
-.iva-field__input { padding: 14px 2px; }
-.iva-field__textarea { padding: 14px 2px; resize: vertical; min-height: 96px; }
+.iva-field__input { padding: 13px 14px; }
+.iva-field__textarea { padding: 13px 14px; resize: vertical; min-height: 110px; }
 .iva-field__input:focus,
 .iva-field__textarea:focus { border-color: var(--clay); }
 .iva-field__input::placeholder,
@@ -1025,43 +1031,26 @@ em { font-style: italic; }
   padding: clamp(48px, 6vw, 76px);
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .iva-cta__panel h2 {
   font-family: var(--font-display);
   font-size: var(--fs-display);
   line-height: var(--lh-head);
   color: var(--on-dark);
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   max-width: 14ch;
   font-weight: 500;
 }
 .iva-cta__panel h2 em { font-style: italic; color: var(--clay-soft); font-weight: 400; }
-.iva-cta__panel > p { color: var(--on-dark-soft); margin: 0 0 32px; max-width: 38ch; line-height: var(--lh-relaxed); }
-.iva-cta__panel .iva-btn { align-self: flex-start; }
-.iva-cta__call {
-  display: flex; align-items: center; gap: 18px;
-  margin-top: auto; padding-top: 36px;
-  border-top: 1px solid var(--on-dark-line);
+.iva-cta__panel > p { color: var(--on-dark-soft); margin: 0; max-width: 38ch; line-height: var(--lh-relaxed); }
+.iva-cta__form {
+  background: var(--paper);
+  padding: clamp(40px, 5vw, 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.iva-cta__callicon {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 48px; height: 48px; border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08); color: var(--on-dark-soft);
-  border: 1px solid var(--on-dark-line);
-}
-.iva-cta__calllab {
-  display: block;
-  font-family: var(--font-mono); font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide); text-transform: uppercase;
-  color: var(--on-dark-faint);
-}
-.iva-cta__callnum {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 22px; font-weight: 500;
-  color: var(--on-dark);
-}
-.iva-cta__form { background: var(--paper); padding: clamp(40px, 5vw, 68px); }
 .iva-cta__formhead {
   font-family: var(--font-mono);
   font-size: var(--fs-label);
@@ -1074,6 +1063,12 @@ em { font-style: italic; }
 .iva-cta__form .iva-field { margin-bottom: 0; }
 .iva-cta__form .iva-field + .iva-field { margin-top: 0; }
 .iva-cta__submit { width: 100%; margin-top: 28px; }
+.iva-cta__formnote {
+  margin: 16px 0 0;
+  font-size: var(--fs-micro);
+  color: var(--muted);
+  text-align: center;
+}
 .iva-cta__thanks { text-align: center; padding: 24px 0; }
 .iva-cta__thankicon {
   display: inline-flex; align-items: center; justify-content: center;
