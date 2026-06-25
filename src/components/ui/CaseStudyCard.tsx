@@ -11,7 +11,7 @@ export default function CaseStudyCard({ cs, headingAs: Tag = 'h3' }: CaseStudyCa
   return (
     <Link href={`/case-studies/${cs.slug}`} className="iva-cs-card">
       <div className="iva-cs-card__img">
-        <img src={cs.image} alt="" loading="lazy" />
+        {cs.image && <img src={cs.image} alt="" loading="lazy" />}
       </div>
       <div className="iva-cs-card__body">
         <span className="iva-cs-card__cat">{cs.category}</span>

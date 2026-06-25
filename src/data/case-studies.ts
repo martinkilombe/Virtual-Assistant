@@ -149,4 +149,127 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Invoicing, CRM hygiene, and ops admin handled end-to-end, freeing engineers to build, not file expenses.',
     keyMetric: '80 hrs/month recovered',
   },
+  {
+    slug: 'executive-support',
+    category: 'Executive Support',
+    industry: 'Strategy Consultancy',
+    heroHeadline: 'A senior partner recovered 12 hours a week. The firm recovered £62k in billable capacity.',
+    summary:
+      'A senior partner at a 25-person strategy consultancy was spending nearly two full days a week on calendar logistics, travel, and inbox triage. We placed a dedicated EA who absorbed all of it and rebuilt her schedule around high-value client time.',
+    client:
+      'A 25-person management consultancy with five senior partners, each running three to five client engagements simultaneously. The firm operated on a billable-hours model, making admin time directly visible on the P&L. One partner in particular was spending a disproportionate share of her week on coordination work that her seniority made expensive.',
+    challenge:
+      "The partner's calendar was managed reactively: meetings were booked without buffer time, travel was arranged at the last minute, and pre-meeting prep arrived late or not at all. Her inbox received 200-plus emails daily, most requiring no direct response from her. She was starting every client engagement underprepared and ending every week exhausted by logistics rather than the work itself.",
+    workstreams: [
+      {
+        title: 'Calendar & Scheduling',
+        body: "Took full ownership of the partner's calendar: proactive booking, enforced buffer rules between meetings, and prep summaries delivered 24 hours in advance. Introduced a weekly planning review so the week was structured before it started, not repaired as it unfolded.",
+      },
+      {
+        title: 'Travel & Logistics',
+        body: 'End-to-end travel management: flights, hotels, ground transport, and consolidated daily itineraries. Last-minute travel changes dropped by 70% through proactive monitoring and earlier booking windows.',
+      },
+      {
+        title: 'Inbox Triage',
+        body: 'Implemented a triage system to categorise, respond to, or defer all non-client correspondence. The partner shifted from managing a 200-email inbox to reviewing an 8-item daily digest of only the decisions that genuinely required her.',
+      },
+    ],
+    metrics: [
+      { value: '90 min', label: 'Admin time per week (down from 14 hrs)' },
+      { value: '£62k', label: 'Est. billable capacity recovered annually' },
+      { value: '24 hrs', label: 'Advance briefing on every client meeting' },
+    ],
+    resultsSummary:
+      'The partner reclaimed roughly 12.5 hours of billable or high-leverage time per week. Annualised at her billing rate, the firm estimated over £62,000 in recoverable senior time. Client meeting prep quality improved measurably: the partner consistently entered engagements better briefed than at any point in the prior two years.',
+    quote: {
+      text: "I used to dread Mondays because of what had piled up over the weekend. Now I start the week knowing exactly what matters, when it happens, and what I need to walk in prepared with. It has changed how I work.",
+      attribution: 'Senior Partner, Strategy Consultancy',
+    },
+    image: '/assets/img/work/executive-support.jpg',
+    excerpt:
+      'Calendar ownership, inbox triage, and travel management that gave a senior partner her week back and recovered £62k in firm capacity.',
+    keyMetric: '12.5 hrs reclaimed weekly',
+  },
+  {
+    slug: 'research-reporting',
+    category: 'Research & Reporting',
+    industry: 'Venture Capital',
+    heroHeadline: '48 investment briefs delivered in a single quarter. Zero additional analyst headcount.',
+    summary:
+      'A three-partner VC firm was falling behind on deal flow because their associates could not keep pace with the research volume. We placed a VA who owned first-pass company research, competitive summaries, and founder background checks so the partners could make faster, better-informed decisions.',
+    client:
+      'A £120M early-stage fund with three general partners and two junior associates covering 60-80 inbound companies per month. The associates were already stretched across portfolio support work, leaving new-deal research perpetually behind. Partners were making second-conversation decisions on incomplete information or delaying meetings while briefs were still being drafted.',
+    challenge:
+      'Investment briefs were taking five to seven days to produce because each required extensive desk research: company background, founding team history, competitive landscape, comparable transactions, and press signals. The associates were working unsustainable hours and briefs were still arriving late. Two promising deals had progressed to term sheet with competing funds before the partners had a complete research picture.',
+    workstreams: [
+      {
+        title: 'Company Research Briefs',
+        body: 'Built a standardised brief template and researched 48 companies across the quarter: founding team backgrounds, product positioning, revenue signals, recent press, and a competitive map. Each brief was delivered within 48 hours of a deal entering the second-conversation stage.',
+      },
+      {
+        title: 'Sector Landscape Digests',
+        body: "Produced weekly sector digests across the firm's three core investment themes: fintech infrastructure, B2B workflow tooling, and climate data. Partners used these to orient portfolio conversations and benchmark new inbound deals without starting from scratch.",
+      },
+      {
+        title: 'Founder Background Research',
+        body: 'Ran structured background research on all founders at second-conversation stage: prior companies, exits, press appearances, LinkedIn signals, and any reference flags. Context surfaced before the partner meeting rather than after.',
+      },
+    ],
+    metrics: [
+      { value: '48', label: 'Investment briefs produced in Q3' },
+      { value: '48 hrs', label: 'Average brief turnaround (down from 6 days)' },
+      { value: '0', label: 'Additional analyst hires required' },
+    ],
+    resultsSummary:
+      'The firm produced 48 investment briefs in a single quarter, more than double the prior quarter output, without adding headcount. Average turnaround fell from six days to 48 hours, allowing partners to run tighter deal processes. The time between first and second conversations compressed by 40%, and the associates redirected the recovered hours toward portfolio company support work where their judgment added more value.',
+    quote: {
+      text: "We were losing deals to faster-moving funds. Not because the investment wasn't right but because we couldn't get our research done in time. That problem is gone.",
+      attribution: 'General Partner, Early-stage VC Fund',
+    },
+    image: '/assets/img/work/research-reporting.jpg',
+    excerpt:
+      '48 investor-ready briefs in one quarter, 48-hour turnaround on every deal, and no additional headcount to get there.',
+    keyMetric: '48-hr brief turnaround',
+  },
+  {
+    slug: 'customer-success',
+    category: 'Customer Success',
+    industry: 'B2B SaaS',
+    heroHeadline: 'First-response time fell from 19 hours to under 3. CSAT went from 68 to 94.',
+    summary:
+      'A 15-person B2B SaaS company had one customer success manager covering 200-plus accounts. Tickets were going unanswered for nearly a full day, onboarding was inconsistent, and churn was creeping up. We stepped in to triage, document, and respond so the CSM could focus on the relationships that mattered most.',
+    client:
+      'A Series A B2B SaaS business with 200-plus accounts and a single customer success manager covering the entire book. Growth had outpaced the support function: new customers were arriving faster than onboarding materials could be produced, and the CSM was spending most of her week in reactive firefighting rather than proactive account development.',
+    challenge:
+      'First-response times on support tickets had drifted to a 19-hour average, with some tickets waiting over 48 hours for any acknowledgement. CSAT scores had fallen to 68, and three mid-market accounts had churned in the prior quarter citing lack of responsiveness. The CSM had no bandwidth to produce onboarding documentation or run proactive check-ins. She was triaging, not managing.',
+    workstreams: [
+      {
+        title: 'Ticket Triage & First Response',
+        body: 'Monitored the support inbox during business hours, categorised every incoming ticket by type and urgency, and sent a first acknowledgement within 2 hours. Resolved all Tier 1 and common Tier 2 queries directly using a response library built during the first two weeks of the engagement.',
+      },
+      {
+        title: 'Onboarding Documentation',
+        body: 'Audited existing onboarding materials and identified 14 gaps where customers consistently stalled. Produced a structured 30-day onboarding guide, a product FAQ, and six step-by-step walkthroughs covering the most-escalated features.',
+      },
+      {
+        title: 'Account Health Monitoring',
+        body: 'Built a simple health tracker flagging accounts with low usage, tickets older than 5 days, or upcoming renewal dates. The CSM received a weekly digest and used it to prioritise outreach, shifting from reactive firefighting to structured account management.',
+      },
+    ],
+    metrics: [
+      { value: '<3 hrs', label: 'Avg first-response (down from 19 hrs)' },
+      { value: '94', label: 'CSAT score (up from 68)' },
+      { value: '0', label: 'Account churn in the 2 quarters following' },
+    ],
+    resultsSummary:
+      'Average first-response time dropped from 19 hours to under 3 within six weeks. CSAT recovered from 68 to 94 within the first full quarter. No accounts churned in the two quarters following the engagement, compared with three mid-market churns in the quarter before. The CSM described the onboarding documentation alone as the most impactful thing the team had done for new customer retention.',
+    quote: {
+      text: "I went from putting out fires all day to actually knowing my accounts, understanding where they were in their journey and what they needed next. The difference in how customers experience us now is night and day.",
+      attribution: 'Customer Success Manager, B2B SaaS',
+    },
+    image: '/assets/img/work/customer-success.jpg',
+    excerpt:
+      'Ticket triage, onboarding documentation, and account health monitoring that took CSAT from 68 to 94 and ended customer churn.',
+    keyMetric: 'CSAT 68 → 94',
+  },
 ]

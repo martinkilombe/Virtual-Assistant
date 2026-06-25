@@ -6,11 +6,19 @@ import CaseStudyCard from '@/components/ui/CaseStudyCard'
 import { CASE_STUDIES } from '@/data/case-studies'
 
 
-const CATEGORIES = ['All', 'Project Management', 'Marketing & Social', 'Operations & Finance']
+const CATEGORIES = [
+  'All',
+  'Project Management',
+  'Marketing & Social',
+  'Operations & Finance',
+  'Executive Support',
+  'Research & Reporting',
+  'Customer Success',
+]
 
 const AGGREGATE_STATS = [
-  { value: '50+', label: 'Projects coordinated' },
-  { value: '3', label: 'Industries served' },
+  { value: '80+', label: 'Engagements delivered' },
+  { value: '6', label: 'Industries served' },
   { value: '100%', label: 'Client retention' },
 ]
 

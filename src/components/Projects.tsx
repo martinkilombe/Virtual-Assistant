@@ -19,7 +19,7 @@ export default function Projects() {
         </div>
 
         <div className="iva-cs-grid">
-          {CASE_STUDIES.map((cs) => (
+          {CASE_STUDIES.slice(0, 3).map((cs) => (
             <CaseStudyCard key={cs.slug} cs={cs} headingAs="h3" />
           ))}
         </div>
