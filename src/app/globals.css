@@ -1023,7 +1023,7 @@ em { font-style: italic; }
 .iva-cta__grid {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  border-radius: var(--r-lg);
+  border-radius: 0;
   overflow: hidden;
   border: 1px solid var(--line);
 }

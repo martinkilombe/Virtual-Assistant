@@ -60,97 +60,99 @@ export default function ContactCTA({
 
   return (
     <section className="iva-section iva-cta" id="contact">
-      <div className="iva-container iva-cta__grid">
-        {/* Left panel */}
-        <div className="iva-cta__panel">
-          <Eyebrow color="white">{eyebrow}</Eyebrow>
-          <h2 className="iva-onaccent">{title}</h2>
-          <p>{description}</p>
+      <div className="iva-container">
+        <div className="iva-cta__grid">
+          {/* Left panel */}
+          <div className="iva-cta__panel">
+            <Eyebrow color="white">{eyebrow}</Eyebrow>
+            <h2 className="iva-onaccent">{title}</h2>
+            <p>{description}</p>
+          </div>
+
+          {/* Form */}
+          <form className="iva-cta__form" onSubmit={submit} noValidate>
+            <p className="iva-cta__formhead">Send us a message</p>
+
+            {sent ? (
+              <div className="iva-cta__thanks">
+                <span className="iva-cta__thankicon">
+                  <IconCheck size={34} />
+                </span>
+                <h3>Message sent, thank you!</h3>
+                <p>
+                  We&apos;ve received your details and will be in touch within
+                  one business day.
+                </p>
+                <Button
+                  variant="primary"
+                  size="md"
+                  type="button"
+                  onClick={() => { setSent(false); setV(EMPTY) }}
+                >
+                  Send another
+                </Button>
+              </div>
+            ) : (
+              <>
+                <div className="iva-cta__row">
+                  <Field
+                    label="Name"
+                    placeholder="Jane Doe"
+                    value={v.name}
+                    onChange={set('name')}
+                    invalid={!!err.name}
+                    hint={err.name}
+                  />
+                  <Field
+                    type="email"
+                    label="Email"
+                    placeholder="you@email.com"
+                    value={v.email}
+                    onChange={set('email')}
+                    invalid={!!err.email}
+                    hint={err.email}
+                  />
+                </div>
+                <div className="iva-cta__row">
+                  <Field
+                    label="Phone"
+                    optional
+                    placeholder="(000) 000-0000"
+                    value={v.phone}
+                    onChange={set('phone')}
+                  />
+                  <Field
+                    label="What's this about?"
+                    optional
+                    placeholder="e.g. inbox management"
+                    value={v.subject}
+                    onChange={set('subject')}
+                  />
+                </div>
+                <Field
+                  as="textarea"
+                  label="Message"
+                  placeholder="Tell us what's eating your week"
+                  value={v.message}
+                  onChange={set('message')}
+                  invalid={!!err.message}
+                  hint={err.message}
+                />
+                <Button
+                  variant="primary"
+                  size="lg"
+                  type="submit"
+                  className="iva-cta__submit"
+                >
+                  Send message
+                </Button>
+                <p className="iva-cta__formnote">
+                  We&apos;ll keep your details private and only use them to get back to you.
+                </p>
+              </>
+            )}
+          </form>
         </div>
-
-        {/* Form */}
-        <form className="iva-cta__form" onSubmit={submit} noValidate>
-          <p className="iva-cta__formhead">Send us a message</p>
-
-          {sent ? (
-            <div className="iva-cta__thanks">
-              <span className="iva-cta__thankicon">
-                <IconCheck size={34} />
-              </span>
-              <h3>Message sent, thank you!</h3>
-              <p>
-                We&apos;ve received your details and will be in touch within
-                one business day.
-              </p>
-              <Button
-                variant="primary"
-                size="md"
-                type="button"
-                onClick={() => { setSent(false); setV(EMPTY) }}
-              >
-                Send another
-              </Button>
-            </div>
-          ) : (
-            <>
-              <div className="iva-cta__row">
-                <Field
-                  label="Name"
-                  placeholder="Jane Doe"
-                  value={v.name}
-                  onChange={set('name')}
-                  invalid={!!err.name}
-                  hint={err.name}
-                />
-                <Field
-                  type="email"
-                  label="Email"
-                  placeholder="you@email.com"
-                  value={v.email}
-                  onChange={set('email')}
-                  invalid={!!err.email}
-                  hint={err.email}
-                />
-              </div>
-              <div className="iva-cta__row">
-                <Field
-                  label="Phone"
-                  optional
-                  placeholder="(000) 000-0000"
-                  value={v.phone}
-                  onChange={set('phone')}
-                />
-                <Field
-                  label="What's this about?"
-                  optional
-                  placeholder="e.g. inbox management"
-                  value={v.subject}
-                  onChange={set('subject')}
-                />
-              </div>
-              <Field
-                as="textarea"
-                label="Message"
-                placeholder="Tell us what's eating your week"
-                value={v.message}
-                onChange={set('message')}
-                invalid={!!err.message}
-                hint={err.message}
-              />
-              <Button
-                variant="primary"
-                size="lg"
-                type="submit"
-                className="iva-cta__submit"
-              >
-                Send message
-              </Button>
-              <p className="iva-cta__formnote">
-                We&apos;ll keep your details private and only use them to get back to you.
-              </p>
-            </>
-          )}
-        </form>
       </div>
     </section>
   )
