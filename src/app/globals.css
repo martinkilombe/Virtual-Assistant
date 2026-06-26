@@ -832,9 +832,9 @@ em { font-style: italic; }
   font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  color: var(--muted);
-  background: var(--paper-2);
-  border: 1px solid var(--line);
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
   border-radius: 100px;
   padding: 4px 10px;
   white-space: nowrap;
@@ -922,9 +922,9 @@ em { font-style: italic; }
     font-size: var(--fs-micro);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--muted);
-    background: var(--paper-2);
-    border: 1px solid var(--line);
+    color: var(--paper);
+    background: var(--ink);
+    border: 1px solid var(--ink);
     border-radius: 100px;
     padding: 3px 8px;
     white-space: nowrap;
