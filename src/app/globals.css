@@ -773,7 +773,7 @@ em { font-style: italic; }
 .svc-spot {
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: var(--r-lg);
+  border-radius: 0;
   padding: clamp(28px, 3.5vw, 44px);
   display: flex;
   flex-direction: column;
@@ -836,7 +836,7 @@ em { font-style: italic; }
   color: var(--paper);
   background: var(--ink);
   border: 1px solid var(--ink);
-  border-radius: 100px;
+  border-radius: 0;
   padding: 4px 10px;
   white-space: nowrap;
 }
@@ -926,7 +926,7 @@ em { font-style: italic; }
     color: var(--paper);
     background: var(--ink);
     border: 1px solid var(--ink);
-    border-radius: 100px;
+    border-radius: 0;
     padding: 3px 8px;
     white-space: nowrap;
   }
