@@ -2946,7 +2946,6 @@ em { font-style: italic; }
     var(--deep-green);
   padding: clamp(80px, 11vw, 152px) 0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 .iva-about-pg-band__grid {
