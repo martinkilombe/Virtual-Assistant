@@ -96,7 +96,7 @@ export default function Services() {
     <section className="iva-section iva-section--panel" id="services">
       <div className="iva-container">
 
-        {/* Copy — sits above the two-column grid */}
+        {/* Copy — centred above the two-column grid */}
         <div className="iva-svc__copy">
           <Eyebrow>Services</Eyebrow>
           <h2 className="iva-serif">

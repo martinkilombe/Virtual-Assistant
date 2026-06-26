@@ -651,19 +651,20 @@ em { font-style: italic; }
   align-items: start;
 }
 
-/* Copy sits above the grid */
+/* Copy sits above the grid — centred */
 .iva-svc__copy {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto clamp(40px, 5vw, 60px);
   padding-bottom: clamp(32px, 4vw, 48px);
   border-bottom: 1px solid var(--line-soft);
-  margin-bottom: clamp(40px, 5vw, 60px);
-  max-width: 560px;
 }
 .iva-svc__copy h2 {
   font-size: var(--fs-h2);
   line-height: var(--lh-head);
   margin: 0 0 20px;
 }
-.iva-svc__copy .iva-lead { margin-bottom: 0; }
+.iva-svc__copy .iva-lead { margin: 0 auto; }
 
 /* ---- Left column (rows only) ---- */
 .iva-svc__left { display: flex; flex-direction: column; }
