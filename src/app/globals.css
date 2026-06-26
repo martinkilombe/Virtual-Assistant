@@ -2743,7 +2743,6 @@ em { font-style: italic; }
 }
 
 .iva-about-pg-story__card {
-  background: var(--deep-green);
   border-radius: var(--r-lg);
   aspect-ratio: 4 / 5;
   position: relative;
@@ -2752,7 +2751,26 @@ em { font-style: italic; }
   align-items: flex-end;
 }
 
+.iva-about-pg-story__card-img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.iva-about-pg-story__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 60, 51, 0.92) 0%,
+    rgba(0, 60, 51, 0.55) 50%,
+    rgba(0, 60, 51, 0.30) 100%
+  );
+  z-index: 1;
+}
+
 .iva-about-pg-story__card-inner {
+  position: relative;
+  z-index: 2;
   padding: clamp(28px, 4vw, 48px);
   display: flex;
   flex-direction: column;
@@ -2767,6 +2785,14 @@ em { font-style: italic; }
   line-height: 0.85;
   letter-spacing: var(--ls-display);
   opacity: 0.9;
+}
+
+.iva-about-pg-story__card-sup {
+  font-size: 0.38em;
+  font-weight: 400;
+  vertical-align: super;
+  letter-spacing: 0;
+  color: var(--clay-soft);
 }
 
 .iva-about-pg-story__card-unit {

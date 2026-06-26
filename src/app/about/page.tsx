@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import RevealWrapper from '@/components/RevealWrapper'
@@ -42,7 +43,7 @@ const PRINCIPLES = [
 ]
 
 const STATS = [
-  { value: '9', label: 'Years matching', sub: 'Since 2015' },
+  { value: '9', label: 'Years matching', sub: 'Since 2017' },
   { value: '850+', label: 'Businesses served', sub: 'Across 40+ industries' },
   { value: '4.9', label: 'Average client rating', sub: 'Out of 5.0' },
 ]
@@ -86,8 +87,16 @@ export default function AboutPage() {
           <section className="iva-section iva-section--paper">
             <div className="iva-container iva-about-pg-story">
               <div className="iva-about-pg-story__card">
+                <Image
+                  src="/assets/img/9-years-about.jpg"
+                  alt="An assistant focused at work"
+                  fill
+                  className="iva-about-pg-story__card-img"
+                  sizes="(max-width: 880px) 100vw, 50vw"
+                />
+                <div className="iva-about-pg-story__card-overlay" aria-hidden="true" />
                 <div className="iva-about-pg-story__card-inner">
-                  <span className="iva-about-pg-story__card-num">9</span>
+                  <span className="iva-about-pg-story__card-num">9<sup className="iva-about-pg-story__card-sup">+</sup></span>
                   <span className="iva-about-pg-story__card-unit">
                     years of matching
                   </span>
