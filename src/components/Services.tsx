@@ -19,6 +19,9 @@ interface ServiceItem {
   desc: string
   statNum: string
   statLabel: string
+  statNum2: string
+  statLabel2: string
+  tags: string[]
   icon: React.ComponentType<{ size?: number }>
 }
 
@@ -30,6 +33,9 @@ const SERVICES: ServiceItem[] = [
     desc: 'Scans, data pulls, and clean briefs. Delivered ready to act on, noise stripped out.',
     statNum: '3',
     statLabel: 'briefs per week',
+    statNum2: '48hr',
+    statLabel2: 'delivery',
+    tags: ['Competitor scans', 'Market briefs', 'Data pulls'],
     icon: IconResearch,
   },
   {
@@ -39,6 +45,9 @@ const SERVICES: ServiceItem[] = [
     desc: 'Every invoice sent, every receipt filed, every cent reconciled. Your books stay spotless.',
     statNum: '12',
     statLabel: 'invoices per week',
+    statNum2: '0',
+    statLabel2: 'errors',
+    tags: ['Invoice tracking', 'Receipt filing', 'Reconciliation'],
     icon: IconInvoice,
   },
   {
@@ -48,6 +57,9 @@ const SERVICES: ServiceItem[] = [
     desc: 'Meetings booked, conflicts resolved, follow-ups handled. Your calendar runs without you.',
     statNum: '18',
     statLabel: 'meetings per week',
+    statNum2: '2hrs',
+    statLabel2: 'saved daily',
+    tags: ['Calendar sync', 'Follow-ups', 'Conflict resolution'],
     icon: IconCalendar,
   },
   {
@@ -57,6 +69,9 @@ const SERVICES: ServiceItem[] = [
     desc: 'Posts live, inbox cleared, audience kept warm. Consistent presence, zero daily effort.',
     statNum: '5',
     statLabel: 'posts per week',
+    statNum2: '3',
+    statLabel2: 'platforms',
+    tags: ['Content creation', 'Inbox management', 'Scheduling'],
     icon: IconRocket,
   },
 ]
@@ -79,21 +94,23 @@ export default function Services() {
 
   return (
     <section className="iva-section iva-section--panel" id="services">
-      <div className="iva-container iva-svc">
+      <div className="iva-container">
 
-        {/* Left: intro copy + row list */}
-        <div className="iva-svc__left">
-          <div className="iva-svc__copy">
-            <Eyebrow>Services</Eyebrow>
-            <h2 className="iva-serif">
-              One assistant, an <em>entire</em> skill set.
-            </h2>
-            <p className="iva-lead">
-              Delegate the recurring work that eats your week and get the hours
-              back to spend on growth.
-            </p>
-          </div>
+        {/* Copy — sits above the two-column grid */}
+        <div className="iva-svc__copy">
+          <Eyebrow>Services</Eyebrow>
+          <h2 className="iva-serif">
+            One assistant, an <em>entire</em> skill set.
+          </h2>
+          <p className="iva-lead">
+            Delegate the recurring work that eats your week and get the hours
+            back to spend on growth.
+          </p>
+        </div>
 
+        {/* Two-column grid: rows | spotlight */}
+        <div className="iva-svc">
+          <div className="iva-svc__left">
           <div className="iva-svc__rows">
             {SERVICES.map((row, i) => {
               const RowIcon = row.icon
@@ -125,9 +142,20 @@ export default function Services() {
                   <div className="svc-row__expand" aria-hidden={!isActive}>
                     <div className="svc-row__expand-inner">
                       <p className="svc-row__expand-desc">{row.desc}</p>
-                      <div className="svc-row__expand-stat">
-                        <span className="svc-row__expand-num">{row.statNum}</span>
-                        <span className="svc-row__expand-label">{row.statLabel}</span>
+                      <div className="svc-row__expand-tags">
+                        {row.tags.map(tag => (
+                          <span key={tag} className="svc-row__expand-tag">{tag}</span>
+                        ))}
+                      </div>
+                      <div className="svc-row__expand-stats">
+                        <div className="svc-row__expand-stat">
+                          <span className="svc-row__expand-num">{row.statNum}</span>
+                          <span className="svc-row__expand-label">{row.statLabel}</span>
+                        </div>
+                        <div className="svc-row__expand-stat">
+                          <span className="svc-row__expand-num">{row.statNum2}</span>
+                          <span className="svc-row__expand-label">{row.statLabel2}</span>
+                        </div>
                       </div>
                       <Link
                         href={`/services#${row.slug}`}
@@ -152,34 +180,46 @@ export default function Services() {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Right: sticky spotlight panel */}
-        <div
-          className="iva-svc__spotlight"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <div className={`svc-spot${fading ? ' svc-spot--out' : ''}`}>
-            <div className="svc-spot__head">
-              <span className="svc-spot__icon" aria-hidden="true">
-                <SpotIcon size={24} />
-              </span>
-              <span className="svc-spot__eyebrow">{s.num}</span>
-            </div>
-            <h3 className="svc-spot__title">{s.title}</h3>
-            <p className="svc-spot__desc">{s.desc}</p>
-            <div className="svc-spot__divider" />
-            <div className="svc-spot__stat">
-              <span className="svc-spot__stat-num">{s.statNum}</span>
-              <span className="svc-spot__stat-label">{s.statLabel}</span>
-            </div>
-            <Link href={`/services#${s.slug}`} className="svc-spot__link">
-              Learn more <IconArrow size={13} />
-            </Link>
           </div>
-        </div>
 
+          {/* Spotlight panel — aligned with rows, no sticky */}
+          <div
+            className="iva-svc__spotlight"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <div className={`svc-spot${fading ? ' svc-spot--out' : ''}`}>
+              <div className="svc-spot__head">
+                <span className="svc-spot__icon" aria-hidden="true">
+                  <SpotIcon size={24} />
+                </span>
+                <span className="svc-spot__eyebrow">{s.num}</span>
+              </div>
+              <h3 className="svc-spot__title">{s.title}</h3>
+              <p className="svc-spot__desc">{s.desc}</p>
+              <div className="svc-spot__tags">
+                {s.tags.map(tag => (
+                  <span key={tag} className="svc-spot__tag">{tag}</span>
+                ))}
+              </div>
+              <div className="svc-spot__divider" />
+              <div className="svc-spot__stats">
+                <div className="svc-spot__stat">
+                  <span className="svc-spot__stat-num">{s.statNum}</span>
+                  <span className="svc-spot__stat-label">{s.statLabel}</span>
+                </div>
+                <div className="svc-spot__stat">
+                  <span className="svc-spot__stat-num">{s.statNum2}</span>
+                  <span className="svc-spot__stat-label">{s.statLabel2}</span>
+                </div>
+              </div>
+              <Link href={`/services#${s.slug}`} className="svc-spot__link">
+                Learn more <IconArrow size={13} />
+              </Link>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   )
