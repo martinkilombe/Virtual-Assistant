@@ -12,6 +12,7 @@ import {
   IconInvoice,
   IconCalendar,
   IconRocket,
+  IconHeadset,
   IconArrow,
 } from '@/components/icons'
 
@@ -123,11 +124,33 @@ const SERVICES: ServiceModule[] = [
       { value: 'Daily', label: 'Inbox triage' },
     ],
   },
+  {
+    id: 'get-started',
+    num: '05',
+    icon: IconHeadset,
+    title: 'Get Started',
+    lead: 'One free intro call to scope your workload, then a matched assistant who is live and working — usually within a day.',
+    bestFor: 'Founders and teams ready to delegate but unsure how to scope and hand off cleanly.',
+    included: [
+      'A scoping call to map your recurring tasks and volume',
+      'Matching with an assistant suited to your industry and tools',
+      'Onboarding setup and first-week handoff documentation',
+      'A check-in after week one to confirm the fit',
+    ],
+    tools: ['Your existing stack', 'Notion or Docs for handoff notes', 'Google Meet / Zoom'],
+    excluded:
+      'Not included: open-ended engagements without a defined scope. We confirm hours and coverage on the intro call before anything goes live.',
+    stats: [
+      { value: 'Free', label: 'Intro call' },
+      { value: '<24h', label: 'Match time' },
+      { value: '1wk', label: 'To go live' },
+    ],
+  },
 ]
 
 const STATS = [
   { value: '1', label: 'Dedicated assistant' },
-  { value: '4', label: 'Service areas covered' },
+  { value: '5', label: 'Service areas covered' },
   { value: '<24h', label: 'Avg. match time' },
 ]
 
@@ -149,7 +172,7 @@ const FAQS = [
   },
   {
     id: 'doesnt-fit',
-    q: "What if a task doesn't fit any of these four?",
+    q: "What if a task doesn't fit any of these five?",
     a: 'Tell us anyway. Most ad hoc requests sit close enough to these areas for your assistant to take on, or they will flag it if it needs a specialist outside this scope.',
   },
   {
@@ -177,7 +200,7 @@ export default function ServicesPage() {
               One assistant. Every <em>recurring</em> task off your plate.
             </h1>
             <p className="iva-lead">
-              Four areas of work your Instant VA handles day to day, scoped clearly so you
+              Five service areas your Instant VA handles day to day, scoped clearly so you
               always know what&apos;s included and what gets handed to a specialist.
             </p>
 
@@ -259,7 +282,7 @@ export default function ServicesPage() {
                 </h2>
                 <p className="iva-band__lead">
                   You don&apos;t hire separately for research, billing, scheduling, and
-                  marketing. One vetted assistant covers all four, matched to the mix you
+                  marketing. One vetted assistant covers all five areas, matched to the mix you
                   actually need.
                 </p>
                 <div className="iva-band__stats">

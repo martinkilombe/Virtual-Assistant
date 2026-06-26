@@ -10,6 +10,7 @@ import {
   IconInvoice,
   IconCalendar,
   IconRocket,
+  IconHeadset,
 } from '@/components/icons'
 
 interface ServiceItem {
@@ -73,6 +74,18 @@ const SERVICES: ServiceItem[] = [
     statLabel2: 'platforms',
     tags: ['Content creation', 'Inbox management', 'Scheduling'],
     icon: IconRocket,
+  },
+  {
+    num: '05',
+    slug: 'get-started',
+    title: 'Get Started',
+    desc: 'Match with a vetted assistant in under 24 hours. Tell us your scope and we handle the rest.',
+    statNum: 'Free',
+    statLabel: 'consultation',
+    statNum2: '<24h',
+    statLabel2: 'to match',
+    tags: ['No commitment', 'Fast match', 'Vetted VAs'],
+    icon: IconHeadset,
   },
 ]
 
